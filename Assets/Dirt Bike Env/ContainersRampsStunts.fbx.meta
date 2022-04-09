@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: 343d1c448ffdd6b4b8bb290cfed34fc6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: _15__
+    100002: _30__
+    100004: Box005
+    100006: box1
+    100008: box2
+    100010: box3
+    100012: //RootNode
+    100014: Object007
+    100016: Object014
+    100018: Panel6M_80
+    100020: Panel_16M_Convex
+    100022: Panel_4M_CurvedRise
+    100024: set_01
+    100026: set_02
+    100028: set_03
+    100030: UShaped_1M6
+    100032: UShaped_5M
+    100034: UShaped_5M_1
+    100036: UShaped_5M_2
+    400000: _15__
+    400002: _30__
+    400004: Box005
+    400006: box1
+    400008: box2
+    400010: box3
+    400012: //RootNode
+    400014: Object007
+    400016: Object014
+    400018: Panel6M_80
+    400020: Panel_16M_Convex
+    400022: Panel_4M_CurvedRise
+    400024: set_01
+    400026: set_02
+    400028: set_03
+    400030: UShaped_1M6
+    400032: UShaped_5M
+    400034: UShaped_5M_1
+    400036: UShaped_5M_2
+    2100000: containers
+    2100002: ramps3
+    2100004: Ramps_Fav_d
+    2100006: N1_Deffuse
+    2100008: Springboard
+    2300000: _15__
+    2300002: _30__
+    2300004: Box005
+    2300006: box1
+    2300008: box2
+    2300010: box3
+    2300012: Object007
+    2300014: Object014
+    2300016: Panel6M_80
+    2300018: Panel_16M_Convex
+    2300020: Panel_4M_CurvedRise
+    2300022: set_01
+    2300024: set_02
+    2300026: set_03
+    2300028: UShaped_1M6
+    2300030: UShaped_5M
+    2300032: UShaped_5M_1
+    2300034: UShaped_5M_2
+    3300000: _15__
+    3300002: _30__
+    3300004: Box005
+    3300006: box1
+    3300008: box2
+    3300010: box3
+    3300012: Object007
+    3300014: Object014
+    3300016: Panel6M_80
+    3300018: Panel_16M_Convex
+    3300020: Panel_4M_CurvedRise
+    3300022: set_01
+    3300024: set_02
+    3300026: set_03
+    3300028: UShaped_1M6
+    3300030: UShaped_5M
+    3300032: UShaped_5M_1
+    3300034: UShaped_5M_2
+    4300000: set_03
+    4300002: set_02
+    4300004: set_01
+    4300006: Panel_16M_Convex
+    4300008: UShaped_5M
+    4300010: UShaped_5M_1
+    4300012: UShaped_5M_2
+    4300014: Panel_4M_CurvedRise
+    4300016: UShaped_1M6
+    4300018: Panel6M_80
+    4300020: Box005
+    4300022: box3
+    4300024: box2
+    4300026: box1
+    4300028: _30__
+    4300030: Object007
+    4300032: _15__
+    4300034: Object014
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

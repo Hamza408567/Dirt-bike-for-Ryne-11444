@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1017596807703",
+    "firebase_url": "https://dirt-bike-shooting-game.firebaseio.com",
+    "project_id": "dirt-bike-shooting-game",
+    "storage_bucket": "dirt-bike-shooting-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017596807703:android:41df61464965a4c9e26a52",
+        "android_client_info": {
+          "package_name": "com.ngv.offroad.dirt.bike.racing.stunts.bike.shooting.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017596807703-9gl1p22ev2jb3174a6cddgi4ccutnfv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwqMRM5DkBarViFXM-pC1ygxOYTapZNLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017596807703-9gl1p22ev2jb3174a6cddgi4ccutnfv7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

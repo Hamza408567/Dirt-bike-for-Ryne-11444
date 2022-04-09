@@ -1,0 +1,463 @@
+fileFormatVersion: 2
+guid: 8db21a48b08ecd94f867eac22a4b1721
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: 1 s
+    100002: 10s a
+    100004: 10s-b
+    100006: 11s
+    100008: 12s -b
+    100010: 12s-a
+    100012: 13s-a
+    100014: 13s-a001
+    100016: 13s-a002
+    100018: 2s
+    100020: 2s001
+    100022: 3s
+    100024: 4s
+    100026: 5s
+    100028: 6s a
+    100030: 6s a001
+    100032: 6s-b
+    100034: 7s
+    100036: 8s
+    100038: 9s-a
+    100040: 9s-b
+    100042: bridg 1
+    100044: circle
+    100046: circle 2
+    100048: circle 3
+    100050: circle 4
+    100052: Cuter001
+    100054: Cuter002
+    100056: Cylinder002
+    100058: Cylinder003
+    100060: finish line
+    100062: GeoSphere001
+    100064: h044
+    100066: H047
+    100068: H048
+    100070: h048
+    100072: h049
+    100074: H051
+    100076: H057
+    100078: H069
+    100080: H075
+    100082: H087
+    100084: H088
+    100086: H089
+    100088: H090
+    100090: H091
+    100092: H092
+    100094: H093
+    100096: H095
+    100098: H26a003
+    100100: H34ab001
+    100102: H6a001
+    100104: H6a002
+    100106: H6a003
+    100108: //RootNode
+    100110: Object010
+    100112: Object011
+    100114: Object033
+    100116: Object035
+    100118: Object036
+    100120: Object037
+    100122: Object038
+    100124: Object039
+    100126: Object042
+    100128: Object043
+    100130: Object044
+    100132: Object045
+    100134: Object047
+    100136: Object048
+    100138: Object049
+    100140: Object050
+    100142: Object051
+    100144: Object052
+    100146: Object053
+    100148: Object054
+    100150: Object055
+    100152: Object056
+    100154: Object057
+    100156: track 1
+    100158: track 2
+    100160: track 3
+    100162: track 4
+    100164: track 5
+    100166: track 7
+    400000: 1 s
+    400002: 10s a
+    400004: 10s-b
+    400006: 11s
+    400008: 12s -b
+    400010: 12s-a
+    400012: 13s-a
+    400014: 13s-a001
+    400016: 13s-a002
+    400018: 2s
+    400020: 2s001
+    400022: 3s
+    400024: 4s
+    400026: 5s
+    400028: 6s a
+    400030: 6s a001
+    400032: 6s-b
+    400034: 7s
+    400036: 8s
+    400038: 9s-a
+    400040: 9s-b
+    400042: bridg 1
+    400044: circle
+    400046: circle 2
+    400048: circle 3
+    400050: circle 4
+    400052: Cuter001
+    400054: Cuter002
+    400056: Cylinder002
+    400058: Cylinder003
+    400060: finish line
+    400062: GeoSphere001
+    400064: h044
+    400066: H047
+    400068: H048
+    400070: h048
+    400072: h049
+    400074: H051
+    400076: H057
+    400078: H069
+    400080: H075
+    400082: H087
+    400084: H088
+    400086: H089
+    400088: H090
+    400090: H091
+    400092: H092
+    400094: H093
+    400096: H095
+    400098: H26a003
+    400100: H34ab001
+    400102: H6a001
+    400104: H6a002
+    400106: H6a003
+    400108: //RootNode
+    400110: Object010
+    400112: Object011
+    400114: Object033
+    400116: Object035
+    400118: Object036
+    400120: Object037
+    400122: Object038
+    400124: Object039
+    400126: Object042
+    400128: Object043
+    400130: Object044
+    400132: Object045
+    400134: Object047
+    400136: Object048
+    400138: Object049
+    400140: Object050
+    400142: Object051
+    400144: Object052
+    400146: Object053
+    400148: Object054
+    400150: Object055
+    400152: Object056
+    400154: Object057
+    400156: track 1
+    400158: track 2
+    400160: track 3
+    400162: track 4
+    400164: track 5
+    400166: track 7
+    2300000: 1 s
+    2300002: 10s a
+    2300004: 10s-b
+    2300006: 11s
+    2300008: 12s -b
+    2300010: 12s-a
+    2300012: 13s-a
+    2300014: 13s-a001
+    2300016: 13s-a002
+    2300018: 2s
+    2300020: 2s001
+    2300022: 3s
+    2300024: 4s
+    2300026: 5s
+    2300028: 6s a
+    2300030: 6s a001
+    2300032: 6s-b
+    2300034: 7s
+    2300036: 8s
+    2300038: 9s-a
+    2300040: 9s-b
+    2300042: bridg 1
+    2300044: circle
+    2300046: circle 2
+    2300048: circle 3
+    2300050: circle 4
+    2300052: Cuter001
+    2300054: Cuter002
+    2300056: Cylinder002
+    2300058: Cylinder003
+    2300060: finish line
+    2300062: h044
+    2300064: H047
+    2300066: H048
+    2300068: h048
+    2300070: h049
+    2300072: H057
+    2300074: H069
+    2300076: H075
+    2300078: H087
+    2300080: H088
+    2300082: H089
+    2300084: H090
+    2300086: H091
+    2300088: H092
+    2300090: H093
+    2300092: H095
+    2300094: H26a003
+    2300096: H34ab001
+    2300098: H6a001
+    2300100: H6a002
+    2300102: H6a003
+    2300104: Object033
+    2300106: Object035
+    2300108: Object036
+    2300110: Object037
+    2300112: Object038
+    2300114: Object039
+    2300116: Object042
+    2300118: Object043
+    2300120: Object044
+    2300122: Object047
+    2300124: Object048
+    2300126: Object049
+    2300128: Object050
+    2300130: Object051
+    2300132: Object052
+    2300134: Object053
+    2300136: Object054
+    2300138: Object055
+    2300140: Object056
+    2300142: Object057
+    2300144: track 1
+    2300146: track 2
+    2300148: track 3
+    2300150: track 4
+    2300152: track 5
+    2300154: track 7
+    3300000: 1 s
+    3300002: 10s a
+    3300004: 10s-b
+    3300006: 11s
+    3300008: 12s -b
+    3300010: 12s-a
+    3300012: 13s-a
+    3300014: 13s-a001
+    3300016: 13s-a002
+    3300018: 2s
+    3300020: 2s001
+    3300022: 3s
+    3300024: 4s
+    3300026: 5s
+    3300028: 6s a
+    3300030: 6s a001
+    3300032: 6s-b
+    3300034: 7s
+    3300036: 8s
+    3300038: 9s-a
+    3300040: 9s-b
+    3300042: bridg 1
+    3300044: circle
+    3300046: circle 2
+    3300048: circle 3
+    3300050: circle 4
+    3300052: Cuter001
+    3300054: Cuter002
+    3300056: Cylinder002
+    3300058: Cylinder003
+    3300060: finish line
+    3300062: h044
+    3300064: H047
+    3300066: H048
+    3300068: h048
+    3300070: h049
+    3300072: H057
+    3300074: H069
+    3300076: H075
+    3300078: H087
+    3300080: H088
+    3300082: H089
+    3300084: H090
+    3300086: H091
+    3300088: H092
+    3300090: H093
+    3300092: H095
+    3300094: H26a003
+    3300096: H34ab001
+    3300098: H6a001
+    3300100: H6a002
+    3300102: H6a003
+    3300104: Object033
+    3300106: Object035
+    3300108: Object036
+    3300110: Object037
+    3300112: Object038
+    3300114: Object039
+    3300116: Object042
+    3300118: Object043
+    3300120: Object044
+    3300122: Object047
+    3300124: Object048
+    3300126: Object049
+    3300128: Object050
+    3300130: Object051
+    3300132: Object052
+    3300134: Object053
+    3300136: Object054
+    3300138: Object055
+    3300140: Object056
+    3300142: Object057
+    3300144: track 1
+    3300146: track 2
+    3300148: track 3
+    3300150: track 4
+    3300152: track 5
+    3300154: track 7
+    4300000: track 1
+    4300002: bridg 1
+    4300004: track 2
+    4300006: circle
+    4300008: track 3
+    4300010: track 4
+    4300012: track 5
+    4300014: track 7
+    4300016: circle 2
+    4300018: finish line
+    4300020: circle 3
+    4300022: circle 4
+    4300024: H047
+    4300026: H048
+    4300028: h044
+    4300030: H057
+    4300032: h048
+    4300034: H26a003
+    4300036: 11s
+    4300038: H069
+    4300040: h049
+    4300042: 9s-a
+    4300044: 5s
+    4300046: 2s
+    4300048: H6a001
+    4300050: 13s-a
+    4300052: H075
+    4300054: Cuter001
+    4300056: 12s -b
+    4300058: 3s
+    4300060: 9s-b
+    4300062: 12s-a
+    4300064: H34ab001
+    4300066: 1 s
+    4300068: 2s001
+    4300070: 4s
+    4300072: 6s a
+    4300074: 6s-b
+    4300076: Object033
+    4300078: Object035
+    4300080: 7s
+    4300082: 8s
+    4300084: 10s-b
+    4300086: 10s a
+    4300088: H6a002
+    4300090: 13s-a001
+    4300092: 13s-a002
+    4300094: H6a003
+    4300096: H087
+    4300098: H088
+    4300100: H089
+    4300102: Object036
+    4300104: Object037
+    4300106: Cuter002
+    4300108: H090
+    4300110: Object038
+    4300112: Object039
+    4300114: H091
+    4300116: H092
+    4300118: H093
+    4300120: 6s a001
+    4300122: Object042
+    4300124: Object043
+    4300126: H095
+    4300128: Object044
+    4300130: Object047
+    4300132: Object048
+    4300134: Object049
+    4300136: Object050
+    4300138: Object051
+    4300140: Object052
+    4300142: Object053
+    4300144: Cylinder002
+    4300146: Cylinder003
+    4300148: Object054
+    4300150: Object055
+    4300152: Object056
+    4300154: Object057
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 3
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

@@ -1,0 +1,195 @@
+fileFormatVersion: 2
+guid: cdc62f89e75440f4a8bd860590865744
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: P1
+    100004: P1_01
+    100006: P1_Col
+    100008: P2
+    100010: P2_01
+    100012: P2_Col
+    100014: P3
+    100016: P3_01
+    100018: P3_Col
+    100020: P4
+    100022: P4_01
+    100024: P4_Col
+    100026: P5
+    100028: P5_01
+    100030: P5_Col
+    100032: P6
+    100034: P6_01
+    100036: P6_Col
+    100038: p7
+    100040: P7_01
+    100042: P7_Col
+    400000: //RootNode
+    400002: P1
+    400004: P1_01
+    400006: P1_Col
+    400008: P2
+    400010: P2_01
+    400012: P2_Col
+    400014: P3
+    400016: P3_01
+    400018: P3_Col
+    400020: P4
+    400022: P4_01
+    400024: P4_Col
+    400026: P5
+    400028: P5_01
+    400030: P5_Col
+    400032: P6
+    400034: P6_01
+    400036: P6_Col
+    400038: p7
+    400040: P7_01
+    400042: P7_Col
+    2100000: Collider
+    2100002: Offroad_Desert
+    2100004: Plant
+    2300000: P1
+    2300002: P1_Col
+    2300004: P2
+    2300006: P2_Col
+    2300008: P3
+    2300010: P3_Col
+    2300012: P4
+    2300014: P4_Col
+    2300016: P5
+    2300018: P5_Col
+    2300020: P6
+    2300022: P6_Col
+    2300024: p7
+    2300026: P7_Col
+    3300000: P1
+    3300002: P1_Col
+    3300004: P2
+    3300006: P2_Col
+    3300008: P3
+    3300010: P3_Col
+    3300012: P4
+    3300014: P4_Col
+    3300016: P5
+    3300018: P5_Col
+    3300020: P6
+    3300022: P6_Col
+    3300024: p7
+    3300026: P7_Col
+    4300000: P3_Col
+    4300002: P3
+    4300004: P2_Col
+    4300006: P2
+    4300008: P1_Col
+    4300010: P1
+    4300012: P5_Col
+    4300014: P5
+    4300016: P4
+    4300018: P4_Col
+    4300020: P6
+    4300022: P6_Col
+    4300024: P7_Col
+    4300026: p7
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collider
+    second: {fileID: 2100000, guid: 4acf6bcc9c66a384c8038589a1786823, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Offroad_Desert
+    second: {fileID: 2100000, guid: 2018c75a4a3f226439ac05584a36ff1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plant
+    second: {fileID: 2100000, guid: 4acf6bcc9c66a384c8038589a1786823, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
