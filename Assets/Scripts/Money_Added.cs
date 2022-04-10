@@ -44,7 +44,7 @@ public class Money_Added : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("removeads") == 0)
         {
-            UnityAdController.Instance.ShowUnityAd();
+           // UnityAdController.Instance.ShowUnityAd();
            // AdsManager.Instance.HideBanner();
            // ConsoliAds.Instance.ShowInterstitial(Index);
            // AdsManager.Instance.ShowBanner(Index);
@@ -55,7 +55,7 @@ public class Money_Added : MonoBehaviour
         if (PlayerPrefs.GetInt("removeads") == 0)
         {
           
-            GoogleMobileAdsDemoScript.showBanner = false;
+            //GoogleMobileAdsDemoScript.showBanner = false;
             //  AdsManager.Instance.HideBanner();
         }
     }

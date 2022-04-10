@@ -56,7 +56,7 @@ public class Main_Menu_Manager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("removeads") == 0)
         {
-            UnityAdController.Instance.ShowUnityAd();
+            //UnityAdController.Instance.ShowUnityAd();
            // AdsManager.Instance.HideBanner();
            // AdsManager.Instance.ShowBanner(0);
         }
@@ -70,7 +70,7 @@ public class Main_Menu_Manager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showInter = true;
+                //GoogleMobileAdsDemoScript.showInter = true;
               //  AdsManager.Instance.HideBanner();
               //  AdsManager.Instance.ShowBanner(0);
             }
@@ -112,7 +112,7 @@ public class Main_Menu_Manager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showBanner = false;
+              //  GoogleMobileAdsDemoScript.showBanner = false;
                 //  AdsManager.Instance.HideBanner();
             }
             if (PlayerPrefs.GetInt("inapp") == 1)
@@ -143,8 +143,8 @@ public class Main_Menu_Manager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showBanner = true;
-                GoogleMobileAdsDemoScript.showBanner = false;
+             //   GoogleMobileAdsDemoScript.showBanner = true;
+              //  GoogleMobileAdsDemoScript.showBanner = false;
                 //  AdsManager.Instance.HideBanner();
                 //  AdsManager.Instance.ShowBanner(0);
             }
@@ -173,8 +173,8 @@ public class Main_Menu_Manager : MonoBehaviour
             {
                 // AdsManager.Instance.HideBanner();
 
-                GoogleMobileAdsDemoScript.showBanner = false;
-                GoogleMobileAdsDemoScript.showInter = true;
+              //  GoogleMobileAdsDemoScript.showBanner = false;
+              //  GoogleMobileAdsDemoScript.showInter = true;
                 // ConsoliAds.Instance.ShowInterstitial(0);
             }
             //For In App
@@ -200,8 +200,8 @@ public class Main_Menu_Manager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showBanner = true;
-                GoogleMobileAdsDemoScript.showBanner = false;
+              //  GoogleMobileAdsDemoScript.showBanner = true;
+              //  GoogleMobileAdsDemoScript.showBanner = false;
                 //AdsManager.Instance.HideBanner();
                 //AdsManager.Instance.ShowBanner(0);
             }
@@ -232,8 +232,8 @@ public class Main_Menu_Manager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showBanner = true;
-                GoogleMobileAdsDemoScript.showBanner = false;
+             //   GoogleMobileAdsDemoScript.showBanner = true;
+              //  GoogleMobileAdsDemoScript.showBanner = false;
                 //  AdsManager.Instance.HideBanner();
                 //  AdsManager.Instance.ShowBanner(0);
             }
@@ -244,8 +244,8 @@ public class Main_Menu_Manager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showBanner = true;
-                GoogleMobileAdsDemoScript.showBanner = false;
+             //   GoogleMobileAdsDemoScript.showBanner = true;
+             //   GoogleMobileAdsDemoScript.showBanner = false;
                 // AdsManager.Instance.HideBanner();
                 // AdsManager.Instance.ShowBanner(0);
             }
@@ -257,7 +257,7 @@ public class Main_Menu_Manager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                UnityAdController.Instance.ShowUnityAd();
+               // UnityAdController.Instance.ShowUnityAd();
                 // AdsManager.Instance.HideBanner();
                 // ConsoliAds.Instance.ShowInterstitial(0);
                 // AdsManager.Instance.ShowBanner(1);
@@ -287,8 +287,8 @@ public class Main_Menu_Manager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showBanner = true;
-                GoogleMobileAdsDemoScript.showBanner = false;
+              //  GoogleMobileAdsDemoScript.showBanner = true;
+              //  GoogleMobileAdsDemoScript.showBanner = false;
                 // AdsManager.Instance.HideBanner();
                 // AdsManager.Instance.ShowBanner(0);
             }
@@ -340,8 +340,8 @@ public class Main_Menu_Manager : MonoBehaviour
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
 
-                GoogleMobileAdsDemoScript.showBanner = false;
-                GoogleMobileAdsDemoScript.showInter = true;
+              //  GoogleMobileAdsDemoScript.showBanner = false;
+             //   GoogleMobileAdsDemoScript.showInter = true;
                 //  AdsManager.Instance.HideBanner();
                 //  ConsoliAds.Instance.ShowInterstitial(2);
             }
@@ -350,8 +350,8 @@ public class Main_Menu_Manager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showBanner = true;
-                GoogleMobileAdsDemoScript.showBanner = false;
+             //   GoogleMobileAdsDemoScript.showBanner = true;
+              //  GoogleMobileAdsDemoScript.showBanner = false;
                 //  AdsManager.Instance.HideBanner();
                 //  AdsManager.Instance.ShowBanner(0);
             }

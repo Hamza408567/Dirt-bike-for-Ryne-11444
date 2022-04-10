@@ -66,8 +66,8 @@ public class Game_controller : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("removeads") == 0)
         {
-            GoogleMobileAdsDemoScript.showBanner = true;
-            GoogleMobileAdsDemoScript.showBanner = false;
+//            GoogleMobileAdsDemoScript.showBanner = true;
+          //  GoogleMobileAdsDemoScript.showBanner = false;
             // AdsManager.Instance.HideBanner();
             // AdsManager.Instance.ShowBanner(0);
         }
@@ -189,7 +189,7 @@ public class Game_controller : MonoBehaviour
              if(PlayerPrefs.GetInt("removeads")==0)
              {
                 // AdsManager.Instance.HideBanner();
-                UnityAdController.Instance.ShowUnityAd();
+                //UnityAdController.Instance.ShowUnityAd();
              //   GoogleMobileAdsDemoScript.showInter = true;
            // ConsoliAds.Instance.ShowInterstitial(4);
            // AdsManager.Instance.ShowBanner(4);
@@ -200,7 +200,7 @@ public class Game_controller : MonoBehaviour
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
                 // AdsManager.Instance.HideBanner();
-                GoogleMobileAdsDemoScript.showInter = true;
+              //  GoogleMobileAdsDemoScript.showInter = true;
                 // ConsoliAds.Instance.ShowInterstitial(0);
             }
             Time.timeScale = 1f;
@@ -211,7 +211,7 @@ public class Game_controller : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                UnityAdController.Instance.ShowUnityAd();
+              //  UnityAdController.Instance.ShowUnityAd();
              //   GoogleMobileAdsDemoScript.showBanner = true;
            //     GoogleMobileAdsDemoScript.showBanner = false;
                 //  AdsManager.Instance.HideBanner();
@@ -225,7 +225,7 @@ public class Game_controller : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showInter = true;
+              //  GoogleMobileAdsDemoScript.showInter = true;
                // GoogleMobileAdsDemoScript.showBanner = true;
               //  GoogleMobileAdsDemoScript.showBanner = false;
                 //  AdsManager.Instance.HideBanner();
@@ -257,7 +257,7 @@ public class Game_controller : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("removeads") == 0)
             {
-                GoogleMobileAdsDemoScript.showInter = true;
+               // GoogleMobileAdsDemoScript.showInter = true;
               //  AdsManager.Instance.HideBanner();
             }
             PlayerPrefs.SetInt("nextlevel", 1);

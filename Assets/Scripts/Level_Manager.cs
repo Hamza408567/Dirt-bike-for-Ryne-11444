@@ -448,7 +448,7 @@ public class Level_Manager : MonoBehaviour
           if(PlayerPrefs.GetInt("removeads")==0)
           {
             //AdsManager.Instance.HideBanner();
-            UnityAdController.Instance.ShowUnityAd();
+            //UnityAdController.Instance.ShowUnityAd();
          //ConsoliAds.Instance.ShowInterstitial(5);
         //AdsManager.Instance.ShowBanner(5);
           }
@@ -460,7 +460,7 @@ public class Level_Manager : MonoBehaviour
         PlayerPrefs.SetInt("Coins", calculateBarrelsCoins + calculateCarCoins + calculateCrateCoins);
         Debug.Log("totalcoins on fails coins" + PlayerPrefs.GetInt("Coins"));
         Game_controller.instance.Main_Manue("fail");
-        Debug.LogError("AdCalled on fail");
+      //  Debug.LogError("AdCalled on fail");
        /**/
 
     }
