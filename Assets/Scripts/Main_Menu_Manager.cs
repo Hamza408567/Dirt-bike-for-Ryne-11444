@@ -35,7 +35,7 @@ public class Main_Menu_Manager : MonoBehaviour
     public PlayerPrefs bikeunlock;
     public PlayerPrefs bikebuyed;
 
-    public GameObject mainPanel,ModeSelectionPanel, bikeSelectionPanel,bikePanel2, levelSelectionPanel,SettingPanel,levelSelectDialogBox,shopPanel,lodingPanel,exitPanel;
+    public GameObject mainPanel, bikeSelectionPanel,bikePanel2,SettingPanel,levelSelectDialogBox,shopPanel,lodingPanel,exitPanel;
     public GameObject unlockEveryThing, unlockBikes, unlockLevels, unlockAds, unlockCoins;
     public GameObject bikeStage;
     public Text rewartText,levelNameText,totalCoinText1, totalCoinText2, totalCoinText3;
@@ -54,44 +54,13 @@ public class Main_Menu_Manager : MonoBehaviour
     }
     void Start()
     {
-        if (PlayerPrefs.GetInt("removeads") == 0)
-        {
-            //UnityAdController.Instance.ShowUnityAd();
-           // AdsManager.Instance.HideBanner();
-           // AdsManager.Instance.ShowBanner(0);
-        }
-        //for test
-        // PlayerPrefs.SetInt("levelUnlock",  4);
-        // PlayerPrefs.SetInt("TotalCoins", 125000);
-        //PlayerPrefs.SetInt("levelUnlock", 10);
-        //PlayerPrefs.SetInt("inapp", 1);
         lodingPanel.SetActive(false);
         if(PlayerPrefs.GetInt("nextlevel") ==1)
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-                //GoogleMobileAdsDemoScript.showInter = true;
-              //  AdsManager.Instance.HideBanner();
-              //  AdsManager.Instance.ShowBanner(0);
-            }
-            levelSelectionPanel.SetActive(true);
+         //   levelSelectionPanel.SetActive(true);
             PlayerPrefs.SetInt("nextlevel", 0);
         }
         lodingPanel.SetActive(false);
-
-        //For In appp
-        //if(PlayerPrefs.GetInt("inapp") == 1 && (PlayerPrefs.GetInt("bikebuyed") == 0 || PlayerPrefs.GetInt("levelbuyed") == 0))
-        //{
-        //    unlockEveryThing.SetActive(true);
-        //}
-        //else
-        //{
-        //    unlockEveryThing.SetActive(false);
-        //}
-        //if (PlayerPrefs.GetInt("adsbuyed") == 1)
-        //{
-        //    unlockAds.SetActive(false);
-        //}
     }
 
 
@@ -123,31 +92,9 @@ public class Main_Menu_Manager : MonoBehaviour
             shopPanel.gameObject.SetActive(true);
             clickEffect.Play();
         }
-        else if (s == "modeselection")
-        {
-            ModeSelectionPanel.SetActive(true);
-            mainPanel.SetActive(false);
-            clickEffect.Play();
-        }
-        else if (s == "BTMS")
-        {
-            ModeSelectionPanel.SetActive(true);
-            bikeSelectionPanel.SetActive(false);
-            bikePanel2.SetActive(false);
-            bikeStage.SetActive(false);
-            Debug.LogError("modselection");
-            clickEffect.Play();
-        }
 
         else if (s == "closeshop")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-             //   GoogleMobileAdsDemoScript.showBanner = true;
-              //  GoogleMobileAdsDemoScript.showBanner = false;
-                //  AdsManager.Instance.HideBanner();
-                //  AdsManager.Instance.ShowBanner(0);
-            }
             shopPanel.gameObject.SetActive(false);
             clickEffect.Play();
         }
@@ -157,11 +104,6 @@ public class Main_Menu_Manager : MonoBehaviour
         }
         else if (s == "LSDB")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-
-                // AdsManager.Instance.HideBanner();
-            }
             levelSelectDialogBox.SetActive(true);
             clickEffect.Play();
         }
@@ -169,53 +111,20 @@ public class Main_Menu_Manager : MonoBehaviour
 
         else if (s == "bikeselection")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-                // AdsManager.Instance.HideBanner();
-
-              //  GoogleMobileAdsDemoScript.showBanner = false;
-              //  GoogleMobileAdsDemoScript.showInter = true;
-                // ConsoliAds.Instance.ShowInterstitial(0);
-            }
-            //For In App
-
-            //if (PlayerPrefs.GetInt("inapp") == 1 && PlayerPrefs.GetInt("bikebuyed") == 0)
-            //{
-
-            //    unlockBikes.SetActive(true);
-            //    bikeStage.SetActive(false);
-            //}
-            //else
-            //{
-            //    bikeStage.SetActive(true);
-            //}
-
             bikeStage.SetActive(true);
-            ModeSelectionPanel.SetActive(false);
+            // ModeSelectionPanel.SetActive(false);
+            mainPanel.SetActive(false);
             bikeSelectionPanel.SetActive(true);
             bikePanel2.SetActive(true);
             clickEffect.Play();
         }
         else if (s == "backtomain")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-              //  GoogleMobileAdsDemoScript.showBanner = true;
-              //  GoogleMobileAdsDemoScript.showBanner = false;
-                //AdsManager.Instance.HideBanner();
-                //AdsManager.Instance.ShowBanner(0);
-            }
-            //For In app
-            //if (PlayerPrefs.GetInt("inapp") == 1 && (PlayerPrefs.GetInt("bikebuyed") == 0 || PlayerPrefs.GetInt("levelbuyed") == 0))
-            //{
-            //    unlockEveryThing.SetActive(true);
-            //}
-            //else
-            //{
-            //    unlockEveryThing.SetActive(false);
-            //}
             mainPanel.SetActive(true);
-            ModeSelectionPanel.SetActive(false);
+            bikePanel2.SetActive(false);
+            bikeSelectionPanel.SetActive(false);
+            bikeStage.SetActive(false);
+           // ModeSelectionPanel.SetActive(fal;se);
             clickEffect.Play();
         }
         else if (s == "rateus")
@@ -230,39 +139,18 @@ public class Main_Menu_Manager : MonoBehaviour
         }
         else if (s == "setting")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-             //   GoogleMobileAdsDemoScript.showBanner = true;
-              //  GoogleMobileAdsDemoScript.showBanner = false;
-                //  AdsManager.Instance.HideBanner();
-                //  AdsManager.Instance.ShowBanner(0);
-            }
             SettingPanel.SetActive(true);
             clickEffect.Play();
         }
         else if (s == "closesetting")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-             //   GoogleMobileAdsDemoScript.showBanner = true;
-             //   GoogleMobileAdsDemoScript.showBanner = false;
-                // AdsManager.Instance.HideBanner();
-                // AdsManager.Instance.ShowBanner(0);
-            }
             SettingPanel.SetActive(false);
             clickEffect.Play();
         }
         /////////////////////////////////////////////
         else if (s == "exit")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-               // UnityAdController.Instance.ShowUnityAd();
-                // AdsManager.Instance.HideBanner();
-                // ConsoliAds.Instance.ShowInterstitial(0);
-                // AdsManager.Instance.ShowBanner(1);
-            }
-            //
+
             exitPanel.SetActive(true);
             clickEffect.Play();
         }
@@ -285,21 +173,8 @@ public class Main_Menu_Manager : MonoBehaviour
 
         else if (s == "levelselection")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-              //  GoogleMobileAdsDemoScript.showBanner = true;
-              //  GoogleMobileAdsDemoScript.showBanner = false;
-                // AdsManager.Instance.HideBanner();
-                // AdsManager.Instance.ShowBanner(0);
-            }
 
-            //For in app
-            //if (PlayerPrefs.GetInt("inapp") == 1 && PlayerPrefs.GetInt("levelbuyed") == 0)
-            //{
-            //    unlockLevels.SetActive(true);
-
-            //}
-            levelSelectionPanel.SetActive(true);
+         //   levelSelectionPanel.SetActive(true);
             bikeSelectionPanel.SetActive(false);
             bikePanel2.SetActive(false);
             bikeStage.SetActive(false);
@@ -307,24 +182,10 @@ public class Main_Menu_Manager : MonoBehaviour
         }
         else if (s == "backtolevelselection")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-                // AdsManager.Instance.HideBanner();
-            }
-            //For In app
-            //if (PlayerPrefs.GetInt("inapp") == 1 && PlayerPrefs.GetInt("bikebuyed") == 0)
-            //{
 
-            //    unlockBikes.SetActive(true);
-            //    bikeStage.SetActive(false);
-            //}
-            //else
-            //{
-            //    bikeStage.SetActive(true);
-            //}
 
             bikeStage.SetActive(true);
-            levelSelectionPanel.SetActive(false);
+          //  levelSelectionPanel.SetActive(false);
             bikeSelectionPanel.SetActive(true);
             bikePanel2.SetActive(true);
 
@@ -337,24 +198,11 @@ public class Main_Menu_Manager : MonoBehaviour
             clickEffect.Play();
             lodingPanel.SetActive(true);
             Invoke("StartGamplay", 1.8f);
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
 
-              //  GoogleMobileAdsDemoScript.showBanner = false;
-             //   GoogleMobileAdsDemoScript.showInter = true;
-                //  AdsManager.Instance.HideBanner();
-                //  ConsoliAds.Instance.ShowInterstitial(2);
-            }
         }
         else if (s == "LSDBclose")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-             //   GoogleMobileAdsDemoScript.showBanner = true;
-              //  GoogleMobileAdsDemoScript.showBanner = false;
-                //  AdsManager.Instance.HideBanner();
-                //  AdsManager.Instance.ShowBanner(0);
-            }
+
             levelSelectDialogBox.SetActive(false);
             clickEffect.Play();
         }
