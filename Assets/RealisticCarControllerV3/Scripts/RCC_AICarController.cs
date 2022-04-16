@@ -104,21 +104,26 @@ public class RCC_AICarController : MonoBehaviour {
 	
 	void Navigation (){
 		
-		if(!waypointsContainer){
+		if(!waypointsContainer && target == null)
+		{
 			Debug.LogError("Waypoints Container Couldn't Found!");
+			Debug.LogError("also target is null");
 			enabled = false;
 			return;
 		}
-		if(_AIType == AIType.FollowWaypoints && waypointsContainer && waypointsContainer.waypoints.Count < 1){
+		if(_AIType == AIType.FollowWaypoints && waypointsContainer && waypointsContainer.waypoints.Count < 1 && target==null){
 			Debug.LogError("Waypoints Container Doesn't Have Any Waypoints!");
+			
 			enabled = false;
 			return;
 		}
-		
-		// Next waypoint's position.
-		Vector3 nextWaypointPosition = transform.InverseTransformPoint( new Vector3(waypointsContainer.waypoints[currentWaypoint].position.x, transform.position.y, waypointsContainer.waypoints[currentWaypoint].position.z));
-		float navigatorInput = Mathf.Clamp(transform.InverseTransformDirection(navigator.desiredVelocity).x * 1.5f, -1f, 1f);
 
+		// Next waypoint's position.
+		
+			
+		
+			float navigatorInput = Mathf.Clamp(transform.InverseTransformDirection(navigator.desiredVelocity).x * 1.5f, -1f, 1f);
+		
 		if (_AIType == AIType.FollowWaypoints) {
 			if(navigator.isOnNavMesh)
 				navigator.SetDestination (waypointsContainer.waypoints [currentWaypoint].position);
@@ -173,7 +178,7 @@ public class RCC_AICarController : MonoBehaviour {
 		}
 
 		if (_AIType == AIType.FollowWaypoints) {
-		
+			Vector3 nextWaypointPosition = transform.InverseTransformPoint(new Vector3(waypointsContainer.waypoints[currentWaypoint].position.x, transform.position.y, waypointsContainer.waypoints[currentWaypoint].position.z));
 			// Checks for the distance to next waypoint. If it is less than written value, then pass to next waypoint.
 			if (nextWaypointPosition.magnitude < nextWaypointPassRadius) {
 				
@@ -193,14 +198,19 @@ public class RCC_AICarController : MonoBehaviour {
 	}
 	
 	void Resetting (){
-		
-		if(carController.speed <= 5 && transform.InverseTransformDirection(rigid.velocity).z < 1f)
-			resetTime += Time.deltaTime;
-		
-		if(resetTime >= 2)
-			carController.direction = -1;
 
-		if(resetTime >= 4 || carController.speed >= 25){
+		if (carController.speed <= 5 && transform.InverseTransformDirection(rigid.velocity).z < 1f)
+		{
+			resetTime += Time.deltaTime;
+			Debug.LogError("resitting");
+		}
+
+		if (resetTime >= 2)
+		{
+			carController.direction = -1;
+		}
+
+		if(resetTime >= 2.5 || carController.speed >= 10){
 			carController.direction = 1;
 			resetTime = 0;
 		}
@@ -317,14 +327,22 @@ public class RCC_AICarController : MonoBehaviour {
 
 	void ApplyTorques(){
 
-		if(carController.direction == 1){
-			if(!limitSpeed){
+		if(carController.direction == 1)
+		{
+			if(!limitSpeed)
+			{
 				carController.gasInput = gasInput;
-			}else{
+				Debug.LogError("gasinput   ");
+			}
+			else
+			{
 				carController.gasInput = gasInput * Mathf.Clamp01(Mathf.Lerp(10f, 0f, (carController.speed) / maximumSpeed));
 			}
-		}else{
+		}
+		else
+		{
 			carController.gasInput = 0f;
+			Debug.LogError("back ");
 		}
 
 		if(smoothedSteer)
