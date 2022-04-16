@@ -25,12 +25,12 @@ public class Player_controller : MonoBehaviour
         if(Application.isEditor)
         {
            // controlMode = ControlMode.simple;
-            this.gameObject.GetComponent<BikeControl>().controlMode = ControlMode.simple;
+          //  this.gameObject.GetComponent<BikeControl>().controlMode = ControlMode.simple;
         }
         else
         {
             // controlMode = ControlMode.touch;
-            this.gameObject.GetComponent<BikeControl>().controlMode = ControlMode.touch;
+          //  this.gameObject.GetComponent<BikeControl>().controlMode = ControlMode.touch;
         }
         reachBool = false; reachBool2 = false; reachBool3 = false;
         crossFinishLine = false;

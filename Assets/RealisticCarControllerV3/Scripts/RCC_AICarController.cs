@@ -16,7 +16,7 @@ public class RCC_AICarController : MonoBehaviour {
 
 	private RCC_CarControllerV3 carController;
 	private Rigidbody rigid;
-	
+	public Transform target;
 	// Waypoint Container.
 	private RCC_AIWaypointsContainer waypointsContainer;
 	public int currentWaypoint = 0;
@@ -77,8 +77,14 @@ public class RCC_AICarController : MonoBehaviour {
 		navigator = navigatorObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
 
 	}
-	
-	void Update(){
+	private void Start()
+	{
+		if (_AIType == AIType.ChasePlayer)
+		{
+			target = Game_controller.instance.player.transform;
+		}
+	}
+    void Update(){
 		
 		navigator.transform.localPosition = new Vector3(0, carController.FrontLeftWheelCollider.transform.localPosition.y, carController.FrontLeftWheelCollider.transform.localPosition.z);
 		
@@ -116,6 +122,9 @@ public class RCC_AICarController : MonoBehaviour {
 		if (_AIType == AIType.FollowWaypoints) {
 			if(navigator.isOnNavMesh)
 				navigator.SetDestination (waypointsContainer.waypoints [currentWaypoint].position);
+		}else if (_AIType == AIType.ChasePlayer) {
+			if(navigator.isOnNavMesh)
+				navigator.SetDestination (target.position);
 		} else {
 			if(navigator.isOnNavMesh)
 				navigator.SetDestination (waypointsContainer.target.position);

@@ -64,13 +64,6 @@ public class Game_controller : MonoBehaviour
     }
     void Start()
     {
-        if (PlayerPrefs.GetInt("removeads") == 0)
-        {
-//            GoogleMobileAdsDemoScript.showBanner = true;
-          //  GoogleMobileAdsDemoScript.showBanner = false;
-            // AdsManager.Instance.HideBanner();
-            // AdsManager.Instance.ShowBanner(0);
-        }
         level = PlayerPrefs.GetInt("level");
         PlayerPrefs.SetInt("inapp", 1);
         Time.timeScale = 1f;
@@ -100,10 +93,6 @@ public class Game_controller : MonoBehaviour
         {
             rainVfx.SetActive(false); playerRainVfx.SetActive(false);
             snowEffect.SetActive(false); playerSnow.SetActive(false);
-            //rockMaterial.mainTexture = rocTexture1;
-            //treeMaterial.mainTexture = treeTexture1;
-            //bushesMaterial.mainTexture = bushesTexture1;
-           // groundMaterial.mainTexture = groundTexture1;
             RenderSettings.fogColor = fogColor1;
             directionalLight.color = lightColor1;
             directionalLight.transform.rotation = Quaternion.Euler(7, 181, -322);
@@ -113,10 +102,6 @@ public class Game_controller : MonoBehaviour
         {
             snowEffect.SetActive(false); playerSnow.SetActive(false);
             rainVfx.SetActive(false); playerRainVfx.SetActive(false);
-            //rockMaterial.mainTexture = rocTexture2;
-            //treeMaterial.mainTexture = treeTexture2;
-            //bushesMaterial.mainTexture = bushesTexture2;
-           // groundMaterial.mainTexture = groundTexture2;
             RenderSettings.fogColor = fogColor2;
             directionalLight.color = lightColor2;
             directionalLight.transform.rotation = Quaternion.Euler(60, 244, 0);
@@ -126,10 +111,6 @@ public class Game_controller : MonoBehaviour
         {
             snowEffect.SetActive(false); playerSnow.SetActive(false);
             rainVfx.SetActive(false); playerRainVfx.SetActive(false);
-            //rockMaterial.mainTexture = rocTexture1;
-            //treeMaterial.mainTexture = treeTexture1;
-            //bushesMaterial.mainTexture = bushesTexture1;
-           // groundMaterial.mainTexture = groundTexture1;
             RenderSettings.fogColor = fogColor2;
             directionalLight.color = lightColor2;
             directionalLight.transform.rotation = Quaternion.Euler(60, 244, 0);
@@ -139,10 +120,6 @@ public class Game_controller : MonoBehaviour
         {
             snowEffect.SetActive(false); playerSnow.SetActive(false);
             rainVfx.SetActive(true); playerRainVfx.SetActive(true);
-            //rockMaterial.mainTexture = rocTexture2;
-            //treeMaterial.mainTexture = treeTexture2;
-            //bushesMaterial.mainTexture = bushesTexture2;
-           // groundMaterial.mainTexture = groundTexture2;
             RenderSettings.fogColor = fogColor3;
             directionalLight.color = lightColor3;
             directionalLight.transform.rotation = Quaternion.Euler(50, -30, 0);
@@ -152,10 +129,6 @@ public class Game_controller : MonoBehaviour
         {
             snowEffect.SetActive(true); playerSnow.SetActive(true);
             rainVfx.SetActive(false); playerRainVfx.SetActive(false);
-            //rockMaterial.mainTexture = rocTexture3;
-            //treeMaterial.mainTexture = treeTexture3;
-            //bushesMaterial.mainTexture = bushesTexture3;
-           // groundMaterial.mainTexture = groundTexture3;
             RenderSettings.fogColor = fogColor4;
             directionalLight.color = lightColor4;
             directionalLight.transform.rotation = Quaternion.Euler(60, 244, 0);
@@ -186,51 +159,25 @@ public class Game_controller : MonoBehaviour
             playerSounds.SetActive(false);
             Time.timeScale = 0f;
             clickEffect.Play();
-             if(PlayerPrefs.GetInt("removeads")==0)
-             {
-                // AdsManager.Instance.HideBanner();
-                //UnityAdController.Instance.ShowUnityAd();
-             //   GoogleMobileAdsDemoScript.showInter = true;
-           // ConsoliAds.Instance.ShowInterstitial(4);
-           // AdsManager.Instance.ShowBanner(4);
-             }
+
         }
         else if (s == "home")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-                // AdsManager.Instance.HideBanner();
-              //  GoogleMobileAdsDemoScript.showInter = true;
-                // ConsoliAds.Instance.ShowInterstitial(0);
-            }
+
             Time.timeScale = 1f;
             SceneManager.LoadScene("Main Manue");
             clickEffect.Play();
         }
         else if (s == "retry")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-              //  UnityAdController.Instance.ShowUnityAd();
-             //   GoogleMobileAdsDemoScript.showBanner = true;
-           //     GoogleMobileAdsDemoScript.showBanner = false;
-                //  AdsManager.Instance.HideBanner();
-                //  AdsManager.Instance.ShowBanner(0);
-            }
+
             Time.timeScale = 1f;
             SceneManager.LoadScene("Gameplay");
             clickEffect.Play();
         }
         else if (s == "resume")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-              //  GoogleMobileAdsDemoScript.showInter = true;
-               // GoogleMobileAdsDemoScript.showBanner = true;
-              //  GoogleMobileAdsDemoScript.showBanner = false;
-                //  AdsManager.Instance.HideBanner();
-                // AdsManager.Instance.ShowBanner(0);
-            }
+
             playerSounds.SetActive(true);
             Time.timeScale = 1f;
             gamePlayManue.SetActive(true);
@@ -255,11 +202,7 @@ public class Game_controller : MonoBehaviour
         }
         else if (s == "next")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-               // GoogleMobileAdsDemoScript.showInter = true;
-              //  AdsManager.Instance.HideBanner();
-            }
+
             PlayerPrefs.SetInt("nextlevel", 1);
             SceneManager.LoadScene("Main Manue");
             clickEffect.Play();
