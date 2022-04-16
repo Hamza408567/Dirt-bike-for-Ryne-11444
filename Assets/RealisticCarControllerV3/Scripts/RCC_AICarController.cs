@@ -210,7 +210,7 @@ public class RCC_AICarController : MonoBehaviour {
 			carController.direction = -1;
 		}
 
-		if(resetTime >= 2.5 || carController.speed >= 10){
+		if(resetTime >= 2.5 || carController.speed >= 15){
 			carController.direction = 1;
 			resetTime = 0;
 		}
