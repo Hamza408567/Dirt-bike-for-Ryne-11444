@@ -9,7 +9,7 @@ public class Player_controller : MonoBehaviour
     public bool crossFinishLine;
     public bool death;
     public bool wasted, check;
-    public Image healthBar;
+
     public Image hitEffect;
     public GameObject bikeFire;
     public GameObject guns;
@@ -35,11 +35,12 @@ public class Player_controller : MonoBehaviour
     }
     void Update()
     {
-       if(healthBar.fillAmount>=0.7f)
+      
+       if(Game_controller.instance. healthBar.fillAmount>=0.7f)
         {
-            bikeFire.SetActive(true);
+            //bikeFire.SetActive(true);
         }
-        if (healthBar.fillAmount == 1 && death == true)
+        if (Game_controller.instance.healthBar.fillAmount == 1 && death == true)
         {
             hitEffect.color = new Color(hitEffect.color.r, hitEffect.color.g, hitEffect.color.b, 150f);
             wasted = false;
@@ -82,7 +83,7 @@ public class Player_controller : MonoBehaviour
         }
         if (other.gameObject.CompareTag("enemybulet"))
         {
-            healthBar.fillAmount += playerDamage;
+            Game_controller.instance.healthBar.fillAmount += playerDamage;
             hitEffect.color = new Color(hitEffect.color.r, hitEffect.color.g, hitEffect.color.b, 150f*Time.deltaTime*2);
             Invoke("Hide_Blood_vfx", 0.5f);
         }

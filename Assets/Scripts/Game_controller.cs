@@ -16,6 +16,7 @@ public class Game_controller : MonoBehaviour
     public Button soundButton;
     public GameObject[] AllBike;
     public GameObject player;
+    public Image healthBar;
     public int level;
     public static Game_controller instance;
     public GameObject playerSounds;
