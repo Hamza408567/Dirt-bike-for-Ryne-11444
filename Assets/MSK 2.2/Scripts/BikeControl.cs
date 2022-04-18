@@ -849,13 +849,13 @@ public class BikeControl : MonoBehaviour
 
                 if (bikeSounds.nitro.volume == 0)
                     bikeSounds.nitro.Stop();
-                if (Game_controller.instance)
-                {
-                    if (Game_controller.instance.nitro)
-                    {
+               // if (Game_controller.instance)
+               // {
+                   // if (Game_controller.instance.nitro)
+                   // {
                         powerShift = Mathf.MoveTowards(powerShift, 100.0f, Time.deltaTime * 50f);
-                    }
-                }
+                   // }
+              //  }
                 curTorque = bikeSetting.bikePower;
                 bikeParticles.shiftParticle1.emissionRate = Mathf.Lerp(bikeParticles.shiftParticle1.emissionRate, 0, Time.deltaTime * 10.0f);
                 bikeParticles.shiftParticle2.emissionRate = Mathf.Lerp(bikeParticles.shiftParticle2.emissionRate, 0, Time.deltaTime * 10.0f);
