@@ -19,19 +19,16 @@ public class Player_controller : MonoBehaviour
    // public ControlMode controlMode = ControlMode.simple;
     [HideInInspector]
     public Rigidbody rb;
+    [Header("Player Cutomization")]
+    public GameObject[] character;
+    public Avatar[] avatr;
+    public Animator animator;
+    
   
     private void Start()
     {
-        if(Application.isEditor)
-        {
-           // controlMode = ControlMode.simple;
-          //  this.gameObject.GetComponent<BikeControl>().controlMode = ControlMode.simple;
-        }
-        else
-        {
-            // controlMode = ControlMode.touch;
-          //  this.gameObject.GetComponent<BikeControl>().controlMode = ControlMode.touch;
-        }
+        animator.avatar = avatr[PlayerPrefs.GetInt("carSelection")];
+        character[PlayerPrefs.GetInt("carSelection")].SetActive(true);
         reachBool = false; reachBool2 = false; reachBool3 = false;
         crossFinishLine = false;
         rb = transform.gameObject.GetComponent<Rigidbody>();

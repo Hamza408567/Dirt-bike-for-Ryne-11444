@@ -14,7 +14,8 @@ public class Game_controller : MonoBehaviour
     public GameObject settingManue;
     public GameObject failManue;
     public Button soundButton;
-    public Player_controller player;
+    public GameObject[] AllBike;
+    public GameObject player;
     public int level;
     public static Game_controller instance;
     public GameObject playerSounds;
@@ -139,7 +140,7 @@ public class Game_controller : MonoBehaviour
 
     void Update()
     {
-        if(player.wasted==true)
+        if(player.GetComponent<Player_controller>().wasted==true)
         {
             rainVfx.transform.parent = null;
             snowEffect.transform.parent = null;
