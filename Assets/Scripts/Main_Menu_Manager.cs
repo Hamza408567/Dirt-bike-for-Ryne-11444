@@ -35,7 +35,7 @@ public class Main_Menu_Manager : MonoBehaviour
     public PlayerPrefs bikeunlock;
     public PlayerPrefs bikebuyed;
 
-    public GameObject mainPanel, bikeSelectionPanel,bikePanel2,SettingPanel,levelSelectDialogBox,shopPanel,lodingPanel,exitPanel;
+    public GameObject mainPanel,bikePanel,SettingPanel,levelSelectDialogBox,shopPanel,lodingPanel,exitPanel;
     public GameObject unlockEveryThing, unlockBikes, unlockLevels, unlockAds, unlockCoins;
     public GameObject bikeStage;
     public Text rewartText,levelNameText,totalCoinText1, totalCoinText2, totalCoinText3;
@@ -54,6 +54,9 @@ public class Main_Menu_Manager : MonoBehaviour
     }
     void Start()
     {
+        PlayerPrefs.SetInt(Constants.totalcoin, 100000);
+
+
         lodingPanel.SetActive(false);
         if(PlayerPrefs.GetInt("nextlevel") ==1)
         {
@@ -66,9 +69,9 @@ public class Main_Menu_Manager : MonoBehaviour
 
     public void Update()
     {
-        totalCoinText1.text = PlayerPrefs.GetInt("TotalCoins").ToString();
-        totalCoinText2.text = PlayerPrefs.GetInt("TotalCoins").ToString();
-        totalCoinText3.text = PlayerPrefs.GetInt("TotalCoins").ToString();
+        totalCoinText1.text = Constants.totalcoin.ToString();
+        totalCoinText2.text = Constants.totalcoin.ToString();
+        totalCoinText3.text = Constants.totalcoin.ToString();
        
     }
     public void SelectMode(int i)
@@ -77,66 +80,56 @@ public class Main_Menu_Manager : MonoBehaviour
     }
     public void Main_menu(string s)
     {
-        if (s == "shop")
-        {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-              //  GoogleMobileAdsDemoScript.showBanner = false;
-                //  AdsManager.Instance.HideBanner();
-            }
-            if (PlayerPrefs.GetInt("inapp") == 1)
-            {
-                unlockCoins.SetActive(true);
-                // Start_Wait.instance.Invoke("wait", 0.5f);
-            }
-            shopPanel.gameObject.SetActive(true);
-            clickEffect.Play();
-        }
+        //if (s == "shop")
+        //{
+        //    if (PlayerPrefs.GetInt("inapp") == 1)
+        //    {
+        //        unlockCoins.SetActive(true);
+        //    }
+        //    shopPanel.gameObject.SetActive(true);
+        //    clickEffect.Play();
+        //}
 
-        else if (s == "closeshop")
-        {
-            shopPanel.gameObject.SetActive(false);
-            clickEffect.Play();
-        }
-        else if (s == "garage")
-        {
-            clickEffect.Play();
-        }
-        else if (s == "LSDB")
-        {
-            levelSelectDialogBox.SetActive(true);
-            clickEffect.Play();
-        }
+        //else if (s == "closeshop")
+        //{
+        //    shopPanel.gameObject.SetActive(false);
+        //    clickEffect.Play();
+        //}
+        //else if (s == "garage")
+        //{
+        //    clickEffect.Play();
+        //}
+        //else if (s == "LSDB")
+        //{
+        //    levelSelectDialogBox.SetActive(true);
+        //    clickEffect.Play();
+        //}
 
 
-        else if (s == "bikeselection")
+        if (s == "bikeselection")
         {
             bikeStage.SetActive(true);
-            // ModeSelectionPanel.SetActive(false);
             mainPanel.SetActive(false);
-            bikeSelectionPanel.SetActive(true);
-            bikePanel2.SetActive(true);
+            bikePanel.SetActive(true);
             clickEffect.Play();
         }
         else if (s == "backtomain")
         {
             mainPanel.SetActive(true);
-            bikePanel2.SetActive(false);
-            bikeSelectionPanel.SetActive(false);
+            bikePanel.SetActive(false);
             bikeStage.SetActive(false);
-           // ModeSelectionPanel.SetActive(fal;se);
             clickEffect.Play();
         }
-        else if (s == "rateus")
-        {
-             Application.OpenURL("https://play.google.com/store/apps/details?id=com.hitech.extreme.dirt.bike");
-            clickEffect.Play();
-        }
-        else if (s == "moregames")
-        {
-             Application.OpenURL("https://play.google.com/store/apps/developer?id=Hi-Tech+Studios");
-            clickEffect.Play();
-        }
+        //else if (s == "rateus")
+        //{
+        //     Application.OpenURL("https://play.google.com/store/apps/details?id=com.hitech.extreme.dirt.bike");
+        //    clickEffect.Play();
+        //}
+        //else if (s == "moregames")
+        //{
+        //     Application.OpenURL("https://play.google.com/store/apps/developer?id=Hi-Tech+Studios");
+        //    clickEffect.Play();
+        //}
         else if (s == "setting")
         {
             SettingPanel.SetActive(true);
@@ -161,41 +154,33 @@ public class Main_Menu_Manager : MonoBehaviour
         }
         else if (s == "no")
         {
-            if (PlayerPrefs.GetInt("removeads") == 0)
-            {
-                //  AdsManager.Instance.HideBanner();
-                // AdsManager.Instance.ShowBanner(0);
-            }
             exitPanel.SetActive(false);
             clickEffect.Play();
         }
 
 
-        else if (s == "levelselection")
-        {
+        //else if (s == "levelselection")
+        //{
 
-         //   levelSelectionPanel.SetActive(true);
-            bikeSelectionPanel.SetActive(false);
-            bikePanel2.SetActive(false);
-            bikeStage.SetActive(false);
-            clickEffect.Play();
-        }
-        else if (s == "backtolevelselection")
-        {
+        //    bikePanel.SetActive(false);
+        //    bikeStage.SetActive(false);
+        //    clickEffect.Play();
+        //}
+        //else if (s == "backtolevelselection")
+        //{
 
 
-            bikeStage.SetActive(true);
-          //  levelSelectionPanel.SetActive(false);
-            bikeSelectionPanel.SetActive(true);
-            bikePanel2.SetActive(true);
+        //    bikeStage.SetActive(true);
+        //    bikePanel.SetActive(true);
 
-            clickEffect.Play();
-        }
+        //    clickEffect.Play();
+        //}
         else if (s == "loading")
         {
            // Debug.LogError("call loading panel");
             Time.timeScale = 1f;
             clickEffect.Play();
+            bikePanel.SetActive(false);
             lodingPanel.SetActive(true);
             Invoke("StartGamplay", 1.8f);
 

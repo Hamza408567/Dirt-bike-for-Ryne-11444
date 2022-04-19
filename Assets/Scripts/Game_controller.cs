@@ -12,7 +12,7 @@ public class Game_controller : MonoBehaviour
     public GameObject pauseManue;
     public GameObject completeManue;
     public GameObject settingManue;
-    public GameObject failManue;
+    public GameObject failManue,playerCatchPanel;
     public Button soundButton;
     public GameObject[] AllBike;
     public GameObject player;
@@ -63,9 +63,12 @@ public class Game_controller : MonoBehaviour
     {
 
         instance = this;
+        player = AllBike[PlayerPrefs.GetInt(Constants.selectedBike)];
     }
     void Start()
     {
+      
+        player.SetActive(true);
         level = PlayerPrefs.GetInt("level");
         PlayerPrefs.SetInt("inapp", 1);
         Time.timeScale = 1f;

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Bike_Customization : MonoBehaviour
 {
-    public Material bikeBlack,bikeRef,bikeBody;
-    public Texture[] bikeTexture;
+
+    public GameObject[] AllBikes;
     public bool[] bikebuyed;
     public Button playButton;
     public Button buyButton;
@@ -27,20 +27,19 @@ public class Bike_Customization : MonoBehaviour
                 bikebuyed[index] = true;
             }
         }
-        bikeBlack.mainTexture = bikeTexture[index];
-        bikeRef.mainTexture = bikeTexture[index];
-        bikeBody.mainTexture = bikeTexture[index];
+        //bikeBlack.mainTexture = AllBikes[index];
+        //bikeRef.mainTexture = AllBikes[index];
+        //bikeBody.mainTexture = AllBikes[index];
         moneyText.text = 0.ToString();
        // bikebuyed = new bool[bikeTexture.Length];
     }
     private void Update()
     {
-        this.transform.rotation *= Quaternion.Euler(0, rotatespeed * Time.deltaTime,0 );
+       // this.transform.rotation *= Quaternion.Euler(0, rotatespeed * Time.deltaTime,0 );
         if (index != 0 )
         {
             if(bikebuyed[index]==true)
             {
-                // playText.text = "Play";
                 playButton.gameObject.SetActive(true);
                 buyButton.gameObject.SetActive(false);
                 sadEmoji.gameObject.SetActive(false);
@@ -102,12 +101,13 @@ public class Bike_Customization : MonoBehaviour
     public void Next_bike(int i)
     {
         Main_Menu_Manager.Instance.clickEffect.Play();
-        if (!(index >= (bikeTexture.Length)-1))
+        if (!(index >= (AllBikes.Length)-1))
         {
             index = index + i;
-            bikeBlack.mainTexture = bikeTexture[index];
-            bikeRef.mainTexture = bikeTexture[index];
-            bikeBody.mainTexture = bikeTexture[index];
+            //bikeBlack.mainTexture = AllBikes[index];
+            //bikeRef.mainTexture = AllBikes[index];
+            //bikeBody.mainTexture = AllBikes[index];
+            AllBikes[index].SetActive(true);
             if(bikebuyed[index]==true)
             {
                 moneyText.text = 0.ToString();
@@ -119,12 +119,13 @@ public class Bike_Customization : MonoBehaviour
            
            
         }
-        else if (index >= (bikeTexture.Length)-1)
+        else if (index >= (AllBikes.Length)-1)
         {
             index = 0;
-            bikeBlack.mainTexture = bikeTexture[index];
-            bikeRef.mainTexture = bikeTexture[index];
-            bikeBody.mainTexture = bikeTexture[index];
+            //bikeBlack.mainTexture = AllBikes[index];
+            //bikeRef.mainTexture = AllBikes[index];
+            //bikeBody.mainTexture = AllBikes[index];
+            AllBikes[index].SetActive(true);
             if (bikebuyed[index] == true)
             {
                 moneyText.text = 0.ToString();
@@ -142,9 +143,10 @@ public class Bike_Customization : MonoBehaviour
         if (!(index<=0))
         {
             index = index - i;
-            bikeBlack.mainTexture = bikeTexture[index];
-            bikeRef.mainTexture = bikeTexture[index];
-            bikeBody.mainTexture = bikeTexture[index];
+            //bikeBlack.mainTexture = AllBikes[index];
+            //bikeRef.mainTexture = AllBikes[index];
+            //bikeBody.mainTexture = AllBikes[index];
+
             if (bikebuyed[index] == true)
             {
                 moneyText.text = 0.ToString();
@@ -156,11 +158,11 @@ public class Bike_Customization : MonoBehaviour
         }
         else if (index <= 0)
         {
-            index = (bikeTexture.Length) - 1;
+            index = (AllBikes.Length) - 1;
             Debug.Log("value of a=" + index);
-            bikeBlack.mainTexture = bikeTexture[index];
-            bikeRef.mainTexture = bikeTexture[index];
-            bikeBody.mainTexture = bikeTexture[index];
+            //bikeBlack.mainTexture = AllBikes[index];
+            //bikeRef.mainTexture = AllBikes[index];
+            //bikeBody.mainTexture = AllBikes[index];
             if (bikebuyed[index] == true)
             {
                 moneyText.text = 0.ToString();
@@ -198,7 +200,7 @@ public class Bike_Customization : MonoBehaviour
     public void Unlock_Bikes()
     {
         PlayerPrefs.SetInt("bikebuyed", 1);
-        for (int i=0;i<bikeTexture.Length;i++)
+        for (int i=0;i<AllBikes.Length;i++)
         {
             PlayerPrefs.SetInt("bikeunlock"+i,1);
             bikebuyed[i] = true;

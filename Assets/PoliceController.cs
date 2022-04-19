@@ -36,6 +36,7 @@ public class PoliceController : MonoBehaviour
 
     public void PlayerCatch()
     {
-
+        Time.timeScale = 0;
+        Game_controller.instance.playerCatchPanel.SetActive(true);
     }
 }
