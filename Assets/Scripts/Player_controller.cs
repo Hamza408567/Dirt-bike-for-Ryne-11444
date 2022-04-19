@@ -3,36 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class PlayerSwitchThing
+{
+    public GameObject target, bikerMan;
+    public GameObject[] CameraView;
+}
+
 public class Player_controller : MonoBehaviour
 {
-    public bool reachBool,reachBool2,reachBool3;
-    public bool crossFinishLine;
     public bool death;
     public bool wasted, check;
-
     public Image hitEffect;
     public GameObject bikeFire;
-    public GameObject guns;
     public BikeAnimation bikeAnimation;
-    public Enemy_detecter enemyDetector;
     public float playerDamage;
-   // public ControlMode controlMode = ControlMode.simple;
     [HideInInspector]
     public Rigidbody rb;
-    [Header("Player Cutomization")]
+    [Header("Player Select")]
+    [Space(10)]
     public GameObject[] character;
     public Avatar[] avatr;
     public Animator animator;
-    
+    public PlayerSwitchThing PlayerSwitching;
   
-    private void Start()
+    private void OnEnable()
     {
         animator.avatar = avatr[PlayerPrefs.GetInt(Constants.SelectedCharacter)];
         character[PlayerPrefs.GetInt(Constants.SelectedCharacter)].SetActive(true);
-        reachBool = false; reachBool2 = false; reachBool3 = false;
-        crossFinishLine = false;
+    }
+    private void OnDisable()
+    {
+        for (int i = 0; i < character.Length; i++)
+        {
+            character[i].SetActive(false);
+        }
+    }
+    private void Start()
+    {
+     
         rb = transform.gameObject.GetComponent<Rigidbody>();
     }
+  
     void Update()
     {
       
@@ -48,10 +60,8 @@ public class Player_controller : MonoBehaviour
             {
                 
                 bikeAnimation.Dead();
-                guns.SetActive(false);
                 wasted = true;
                 Debug.Log("explod");
-                enemyDetector.fire = false;
                 rb.AddForce(0, 100000 * 5, 0);
                 rb.AddTorque(100000 * 15, 100000 * 15, 0);
                 check = true;
@@ -62,25 +72,6 @@ public class Player_controller : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(this.gameObject.tag=="Player")
-        { 
-        if (other.gameObject.CompareTag("reach"))
-        {
-                 reachBool = true;
-        }
-        if (other.gameObject.CompareTag("reach2"))
-        {
-                reachBool2 = true;
-        }
-        if (other.gameObject.CompareTag("reach3"))
-        {
-                reachBool3 = true;
-        }
-
-            if (other.gameObject.CompareTag("finish"))
-        {
-            crossFinishLine = true;
-        }
         if (other.gameObject.CompareTag("enemybulet"))
         {
             Game_controller.instance.healthBar.fillAmount += playerDamage;
@@ -92,7 +83,6 @@ public class Player_controller : MonoBehaviour
            
         }
         }
-    }
     public void Hide_Blood_vfx()
     {
         hitEffect.color = new Color(hitEffect.color.r, hitEffect.color.g, hitEffect.color.b, 0f* Time.deltaTime*2);

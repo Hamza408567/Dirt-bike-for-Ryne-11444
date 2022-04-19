@@ -226,27 +226,27 @@ public class Level_Manager : MonoBehaviour
         {
 
             taskBackground.color = Color.green;
-            if(player.crossFinishLine == true)
-            {
-               // totalCoinsText2.text = (calculateBarrelsCoins + calculateCarCoins+calculateCrateCoins).ToString();
-                PlayerPrefs.SetInt("Coins", calculateBarrelsCoins + calculateCarCoins + calculateCrateCoins);
-                Debug.Log("totalcoins on complete coins" + PlayerPrefs.GetInt("Coins"));
-                Enable_ending_cinematic();
-            }
+            //if(player.crossFinishLine == true)
+            //{
+            //   // totalCoinsText2.text = (calculateBarrelsCoins + calculateCarCoins+calculateCrateCoins).ToString();
+            //    PlayerPrefs.SetInt("Coins", calculateBarrelsCoins + calculateCarCoins + calculateCrateCoins);
+            //    Debug.Log("totalcoins on complete coins" + PlayerPrefs.GetInt("Coins"));
+            //    Enable_ending_cinematic();
+            //}
 
             
         }
        //When Task Fail and player cross the finish line
        else if(destroyTotalCars<= task)
         {
-            if (player.crossFinishLine == true)
-            {
-                totalCoinsText.text = (calculateBarrelsCoins + calculateCarCoins + calculateCrateCoins).ToString();
-                PlayerPrefs.SetInt("Coins", calculateBarrelsCoins + calculateCarCoins + calculateCrateCoins);
-                Debug.Log("totalcoins on fails coins" + PlayerPrefs.GetInt("Coins"));
-                Game_controller.instance.Main_Manue("fail");
+            //if (player.crossFinishLine == true)
+            //{
+            //    totalCoinsText.text = (calculateBarrelsCoins + calculateCarCoins + calculateCrateCoins).ToString();
+            //    PlayerPrefs.SetInt("Coins", calculateBarrelsCoins + calculateCarCoins + calculateCrateCoins);
+            //    Debug.Log("totalcoins on fails coins" + PlayerPrefs.GetInt("Coins"));
+            //    Game_controller.instance.Main_Manue("fail");
 
-            }
+            //}
         }
        //when player is wasted
        if(player.wasted==true)
@@ -283,21 +283,21 @@ public class Level_Manager : MonoBehaviour
         if (PlayerPrefs.GetInt("level") == 2 || PlayerPrefs.GetInt("level") == 7)
         {
             Debug.Log("active level 2 second wave");
-            if (player.reachBool2 == true)
-            {
-                path[0].SetActive(false);
-                path[1].SetActive(true);
-                level3FinishPoint.SetActive(true);
-                Invoke(nameof(EnabEnemy),1f);
-            }
-            if(player.reachBool==true)
-            {
-                for (int i = allEnemysCars.Length / 2; i < allEnemysCars.Length; i++)
-                {
-                    allEnemysCars[i].GetComponent<RCC_AICarController>().enabled = true;
-                    allEnemysCars[i].GetComponent<Enemy_controller>().enabled = true;
-                }
-            }
+            //if (player.reachBool2 == true)
+            //{
+            //    path[0].SetActive(false);
+            //    path[1].SetActive(true);
+            //    level3FinishPoint.SetActive(true);
+            //    Invoke(nameof(EnabEnemy),1f);
+            //}
+            //if(player.reachBool==true)
+            //{
+            //    for (int i = allEnemysCars.Length / 2; i < allEnemysCars.Length; i++)
+            //    {
+            //        allEnemysCars[i].GetComponent<RCC_AICarController>().enabled = true;
+            //        allEnemysCars[i].GetComponent<Enemy_controller>().enabled = true;
+            //    }
+            //}
         }
 
         //Active second wave of enemys for level 4

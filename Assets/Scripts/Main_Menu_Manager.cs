@@ -35,12 +35,10 @@ public class Main_Menu_Manager : MonoBehaviour
     public PlayerPrefs bikeunlock;
     public PlayerPrefs bikebuyed;
 
-    public GameObject mainPanel,bikePanel,SettingPanel,levelSelectDialogBox,shopPanel,lodingPanel,exitPanel;
+    public GameObject mainPanel,bikePanel,SettingPanel,shopPanel,lodingPanel,exitPanel,CharacterSelectionPanel;
     public GameObject unlockEveryThing, unlockBikes, unlockLevels, unlockAds, unlockCoins;
-    public GameObject bikeStage;
     public Text rewartText,levelNameText,totalCoinText1, totalCoinText2, totalCoinText3;
     public AudioSource clickEffect;
-    public Bike_Customization BC;
     public Level_Unlock LU;
     public Button soundButton;
 
@@ -80,56 +78,33 @@ public class Main_Menu_Manager : MonoBehaviour
     }
     public void Main_menu(string s)
     {
-        //if (s == "shop")
-        //{
-        //    if (PlayerPrefs.GetInt("inapp") == 1)
-        //    {
-        //        unlockCoins.SetActive(true);
-        //    }
-        //    shopPanel.gameObject.SetActive(true);
-        //    clickEffect.Play();
-        //}
-
-        //else if (s == "closeshop")
-        //{
-        //    shopPanel.gameObject.SetActive(false);
-        //    clickEffect.Play();
-        //}
-        //else if (s == "garage")
-        //{
-        //    clickEffect.Play();
-        //}
-        //else if (s == "LSDB")
-        //{
-        //    levelSelectDialogBox.SetActive(true);
-        //    clickEffect.Play();
-        //}
-
-
-        if (s == "bikeselection")
+       
+       if(s == "characterselection")
         {
-            bikeStage.SetActive(true);
             mainPanel.SetActive(false);
-            bikePanel.SetActive(true);
+            CharacterSelectionPanel.SetActive(true);
             clickEffect.Play();
         }
         else if (s == "backtomain")
         {
             mainPanel.SetActive(true);
-            bikePanel.SetActive(false);
-            bikeStage.SetActive(false);
+            CharacterSelectionPanel.SetActive(false);
             clickEffect.Play();
         }
-        //else if (s == "rateus")
-        //{
-        //     Application.OpenURL("https://play.google.com/store/apps/details?id=com.hitech.extreme.dirt.bike");
-        //    clickEffect.Play();
-        //}
-        //else if (s == "moregames")
-        //{
-        //     Application.OpenURL("https://play.google.com/store/apps/developer?id=Hi-Tech+Studios");
-        //    clickEffect.Play();
-        //}
+       else if (s == "bikeselection")
+        {
+            CharacterSelectionPanel.SetActive(false);
+            bikePanel.SetActive(true);
+            clickEffect.Play();
+        }
+        else if (s == "backtoCharacterselection")
+        {
+            CharacterSelectionPanel.SetActive(true);
+            bikePanel.SetActive(false);
+            clickEffect.Play();
+        }
+
+
         else if (s == "setting")
         {
             SettingPanel.SetActive(true);
@@ -157,24 +132,6 @@ public class Main_Menu_Manager : MonoBehaviour
             exitPanel.SetActive(false);
             clickEffect.Play();
         }
-
-
-        //else if (s == "levelselection")
-        //{
-
-        //    bikePanel.SetActive(false);
-        //    bikeStage.SetActive(false);
-        //    clickEffect.Play();
-        //}
-        //else if (s == "backtolevelselection")
-        //{
-
-
-        //    bikeStage.SetActive(true);
-        //    bikePanel.SetActive(true);
-
-        //    clickEffect.Play();
-        //}
         else if (s == "loading")
         {
            // Debug.LogError("call loading panel");
@@ -185,12 +142,12 @@ public class Main_Menu_Manager : MonoBehaviour
             Invoke("StartGamplay", 1.8f);
 
         }
-        else if (s == "LSDBclose")
-        {
+        //else if (s == "LSDBclose")
+        //{
 
-            levelSelectDialogBox.SetActive(false);
-            clickEffect.Play();
-        }
+        //    levelSelectDialogBox.SetActive(false);
+        //    clickEffect.Play();
+        //}
 
     }
     public void StartGamplay()
@@ -214,12 +171,6 @@ public class Main_Menu_Manager : MonoBehaviour
 
     }
 
-
-
-    /// <summary>
-    /// Level Selection 
-    /// </summary>
-    /// <param name="i"></param>
     public void Level_selection(int i)
     {
         PlayerPrefs.SetInt("level", i);
@@ -257,7 +208,6 @@ public class Main_Menu_Manager : MonoBehaviour
         else if (s == "closebikepanel")
         {
             unlockBikes.SetActive(false);
-            bikeStage.SetActive(true);
         }
         else if (s == "closeULE")
         {
@@ -294,7 +244,6 @@ public class Main_Menu_Manager : MonoBehaviour
         Debug.Log("buy coins" + PlayerPrefs.GetInt("TotalCoins"));
         clickEffect.Play();
         unlockAds.SetActive(false);
-        BC.Unlock_Bikes();
         LU.Unlock_Levels();
         Invoke("HideEverythingPanel", 0.2f);
 

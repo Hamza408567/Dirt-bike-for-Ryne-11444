@@ -211,6 +211,5 @@ public class Bike_Customization : MonoBehaviour
     public void HidebikePanel()
     {
        Main_Menu_Manager.Instance.unlockBikes.SetActive(false);
-        Main_Menu_Manager.Instance.bikeStage.SetActive(true);
     }
 }
