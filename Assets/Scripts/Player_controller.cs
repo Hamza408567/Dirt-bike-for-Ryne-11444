@@ -27,8 +27,8 @@ public class Player_controller : MonoBehaviour
   
     private void Start()
     {
-        animator.avatar = avatr[PlayerPrefs.GetInt("charSelection")];
-        character[PlayerPrefs.GetInt("charSelection")].SetActive(true);
+        animator.avatar = avatr[PlayerPrefs.GetInt(Constants.SelectedCharacter)];
+        character[PlayerPrefs.GetInt(Constants.SelectedCharacter)].SetActive(true);
         reachBool = false; reachBool2 = false; reachBool3 = false;
         crossFinishLine = false;
         rb = transform.gameObject.GetComponent<Rigidbody>();

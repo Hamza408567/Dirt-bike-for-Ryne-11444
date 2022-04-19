@@ -11,8 +11,8 @@ public class Active_character : MonoBehaviour
 
     private void OnEnable()
     {
-        animator.avatar = avatr[PlayerPrefs.GetInt("charSelection")];
-        character[PlayerPrefs.GetInt("charSelection")].SetActive(true);
+        animator.avatar = avatr[PlayerPrefs.GetInt(Constants.SelectedCharacter)];
+        character[PlayerPrefs.GetInt(Constants.SelectedCharacter)].SetActive(true);
     }
 
 }

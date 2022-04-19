@@ -7,7 +7,9 @@ public class Bike_Slection : MonoBehaviour
 {
     public GameObject[] AllBikes;
     public Transform carPosition;
+    [HideInInspector]
     public int selectedBike;
+    [HideInInspector]
     public int previousBike;
     public int[] BikePrice;
     public GameObject start, locked, unlock;
