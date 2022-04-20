@@ -332,7 +332,7 @@ public class RCC_AICarController : MonoBehaviour {
 			if(!limitSpeed)
 			{
 				carController.gasInput = gasInput;
-				Debug.LogError("gasinput   ");
+				//Debug.LogError("gasinput   ");
 			}
 			else
 			{
