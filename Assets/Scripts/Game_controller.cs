@@ -25,18 +25,6 @@ public class Game_controller : MonoBehaviour
     public AudioSource clickEffect;
     //Environment attributes
     [Header("Environment Attribute")]
-    public GameObject rainVfx,snowEffect;
-    public GameObject playerRainVfx,playerSnow;
-   //rock material
-   // public Material rockMaterial;
-   // public Texture rocTexture1, rocTexture2, rocTexture3;
-   //tree material
-   // public Material treeMaterial;
-   // public Texture treeTexture1, treeTexture2, treeTexture3;
-    //busheh material
-   // public Material bushesMaterial;
-   // public Texture bushesTexture1, bushesTexture2, bushesTexture3;
-   //ground material
     public Material groundMaterial;
     public Texture groundTexture1, groundTexture2, groundTexture3;
     // fog colour
@@ -96,8 +84,6 @@ public class Game_controller : MonoBehaviour
         //Set Environment for level
         if (level==0|| level == 5)//green environment
         {
-            rainVfx.SetActive(false); playerRainVfx.SetActive(false);
-            snowEffect.SetActive(false); playerSnow.SetActive(false);
             RenderSettings.fogColor = fogColor1;
             directionalLight.color = lightColor1;
             directionalLight.transform.rotation = Quaternion.Euler(7, 181, -322);
@@ -105,8 +91,6 @@ public class Game_controller : MonoBehaviour
         }
         else if (level == 1 || level == 6)//brown environment
         {
-            snowEffect.SetActive(false); playerSnow.SetActive(false);
-            rainVfx.SetActive(false); playerRainVfx.SetActive(false);
             RenderSettings.fogColor = fogColor2;
             directionalLight.color = lightColor2;
             directionalLight.transform.rotation = Quaternion.Euler(60, 244, 0);
@@ -114,8 +98,6 @@ public class Game_controller : MonoBehaviour
         }
         else if (level == 2 || level == 7)//green/brown environment
         {
-            snowEffect.SetActive(false); playerSnow.SetActive(false);
-            rainVfx.SetActive(false); playerRainVfx.SetActive(false);
             RenderSettings.fogColor = fogColor2;
             directionalLight.color = lightColor2;
             directionalLight.transform.rotation = Quaternion.Euler(60, 244, 0);
@@ -123,8 +105,6 @@ public class Game_controller : MonoBehaviour
         }
         else if (level == 3 || level == 8)//brown environment
         {
-            snowEffect.SetActive(false); playerSnow.SetActive(false);
-            rainVfx.SetActive(true); playerRainVfx.SetActive(true);
             RenderSettings.fogColor = fogColor3;
             directionalLight.color = lightColor3;
             directionalLight.transform.rotation = Quaternion.Euler(50, -30, 0);
@@ -132,22 +112,10 @@ public class Game_controller : MonoBehaviour
         }
         else if (level == 4 || level == 9)//brown environment
         {
-            snowEffect.SetActive(true); playerSnow.SetActive(true);
-            rainVfx.SetActive(false); playerRainVfx.SetActive(false);
             RenderSettings.fogColor = fogColor4;
             directionalLight.color = lightColor4;
             directionalLight.transform.rotation = Quaternion.Euler(60, 244, 0);
             RenderSettings.skybox = skyBox4;
-        }
-    }
-
-
-    void Update()
-    {
-        if(player.GetComponent<Player_controller>().wasted==true)
-        {
-            rainVfx.transform.parent = null;
-            snowEffect.transform.parent = null;
         }
     }
     public void Main_Manue(string s)

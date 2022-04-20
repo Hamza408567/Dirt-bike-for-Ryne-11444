@@ -12,7 +12,7 @@ using System.Collections;
 [AddComponentMenu("BoneCracker Games/Realistic Car Controller/Camera/Orbit Camera")]
 public class RCC_CameraOrbit : MonoBehaviour
 {
-
+	[HideInInspector]
 	public Transform target;
 	public float distance= 10.0f;
 	
@@ -27,6 +27,7 @@ public class RCC_CameraOrbit : MonoBehaviour
 		
 	void  Start (){
 
+		target = Game_controller.instance.player.transform;
 		Vector3 angles= transform.eulerAngles;
 		x = angles.y;
 		y = angles.x;
