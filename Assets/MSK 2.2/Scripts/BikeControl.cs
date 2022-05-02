@@ -830,7 +830,7 @@ public class BikeControl : MonoBehaviour
                     bikeSounds.nitro.GetComponent<AudioSource>().Play();
 
                 }
-
+                Game_controller.instance.wheels = true;
 
                 curTorque = powerShift > 0 ? bikeSetting.shiftPower : bikeSetting.bikePower;
                 bikeParticles.shiftParticle1.emissionRate = Mathf.Lerp(bikeParticles.shiftParticle1.emissionRate, powerShift > 0 ? 50 : 0, Time.deltaTime * 10.0f);
@@ -844,7 +844,7 @@ public class BikeControl : MonoBehaviour
                 {
                     shifmotor = true;
                 }
-
+                Game_controller.instance.wheels = false;
                 bikeSounds.nitro.volume = Mathf.MoveTowards(bikeSounds.nitro.volume, 0.0f, Time.deltaTime * 2.0f);
 
                 if (bikeSounds.nitro.volume == 0)

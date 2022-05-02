@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Game_controller : MonoBehaviour
 {
     public GameObject[] Levels;
-    public bool ready;
+    public bool ready,wheels;
     public GameObject gamePlayManue;
     public GameObject startPanel;
     public GameObject pauseManue;
@@ -16,7 +16,7 @@ public class Game_controller : MonoBehaviour
     public Button soundButton;
     public GameObject[] AllBike;
     public GameObject player;
-    public Image healthBar;
+    public Image healthBar,policeDetectBar;
     public int level;
     public static Game_controller instance;
     public GameObject playerSounds;

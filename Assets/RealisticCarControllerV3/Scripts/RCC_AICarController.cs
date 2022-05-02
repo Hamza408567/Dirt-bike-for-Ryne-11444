@@ -77,11 +77,21 @@ public class RCC_AICarController : MonoBehaviour {
 		navigator = navigatorObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
 
 	}
-	private void Start()
+	public void SetTarget(string s)
 	{
-		if (_AIType == AIType.ChasePlayer)
+		if (s == "catchPlayer")
 		{
+
+			_AIType = AIType.ChasePlayer;
 			target = Game_controller.instance.player.transform;
+			Debug.LogError("wheelers detect");
+		}
+		else
+		{
+			if (!PoliceController.instance.wheelerDetected)
+			{
+				_AIType = AIType.FollowWaypoints;
+			}
 		}
 	}
     void Update(){
