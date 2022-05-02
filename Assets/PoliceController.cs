@@ -23,7 +23,7 @@ public class PoliceController : MonoBehaviour
     {
         if(playerInRange)
         {
-            //Game_controller.instance.healthBar.fillAmount = Mathf.Lerp(Game_controller.instance.healthBar.fillAmount, 1.1f, 0.01f);
+            Game_controller.instance.healthBar.fillAmount = Mathf.Lerp(Game_controller.instance.healthBar.fillAmount, 1.1f, 0.01f);
             if (Game_controller.instance.healthBar.fillAmount >= 1)
             {
                PlayerCatch();
@@ -35,9 +35,13 @@ public class PoliceController : MonoBehaviour
         }
         
     }
-    public void DetectionBar()
+    public void DetectionBarPositive()
     {
         Game_controller.instance.policeDetectBar.fillAmount = Mathf.Lerp(Game_controller.instance.policeDetectBar.fillAmount, 1.1f, 0.01f);
+    }  
+    public void DetectionBarNegative()
+    {
+        Game_controller.instance.policeDetectBar.fillAmount = Mathf.Lerp(Game_controller.instance.policeDetectBar.fillAmount, 0f, 0.01f);
     }
     public void PlayerCatch()
     {
