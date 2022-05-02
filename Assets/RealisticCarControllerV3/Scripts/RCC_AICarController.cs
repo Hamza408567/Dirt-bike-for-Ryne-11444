@@ -97,7 +97,14 @@ public class RCC_AICarController : MonoBehaviour {
     void Update(){
 		
 		navigator.transform.localPosition = new Vector3(0, carController.FrontLeftWheelCollider.transform.localPosition.y, carController.FrontLeftWheelCollider.transform.localPosition.z);
-		
+		if(_AIType == AIType.ChasePlayer)
+        {
+			GetComponent<RCC_CarControllerV3>().maxspeed = 120;
+        }
+        else
+        {
+			GetComponent<RCC_CarControllerV3>().maxspeed = 60;
+		}
 	}
 	
 	void  FixedUpdate (){
@@ -220,7 +227,7 @@ public class RCC_AICarController : MonoBehaviour {
 			carController.direction = -1;
 		}
 
-		if(resetTime >= 2.5 || carController.speed >= 15){
+		if(resetTime >= 5 || carController.speed >= 13){
 			carController.direction = 1;
 			resetTime = 0;
 		}

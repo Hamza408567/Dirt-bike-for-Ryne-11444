@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class MinMap : MonoBehaviour
 {
-    public Transform target; 
+    public Transform player;
+    //public Transform playercam;
     void Start()
     {
-        target = Game_controller.instance.player.transform;
+        player = Game_controller.instance.player.transform;
     }
 
     
     void LateUpdate()
     {
-        Vector3 newposition = target.position;
+        Vector3 newposition = player.position;
         newposition.y = transform.position.y;
         transform.position = newposition;
-        transform.rotation = Quaternion.Euler(90f, target.eulerAngles.y, 0f);
+        transform.rotation = Quaternion.Euler(90f, Camera.main.transform.eulerAngles.y, 0f);
     }
 }

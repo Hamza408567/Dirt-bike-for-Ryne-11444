@@ -7,6 +7,7 @@ public class PoliceCar : MonoBehaviour
     public GameObject target;
     public GameObject policeLights;
     public GameObject policeDecetionArea;
+    public ParticleSystem detectionEffect;
     public int detectionRange;
     public int catchDistance=10;
    
@@ -40,7 +41,9 @@ public class PoliceCar : MonoBehaviour
             PoliceController.instance.DetectionBarPositive();
             if (Game_controller.instance.policeDetectBar.fillAmount >= 1)
             {
+                detectionEffect.Play();
                 detectionRange = 100;
+                policeDecetionArea.GetComponent<SpriteRenderer>().color = Color.red;
                 Vector3 scale =new Vector3 (9.4f, 9.4f, 9.4f);
                 policeDecetionArea.transform.localScale = scale;
                 policeLights.SetActive(true);
@@ -62,9 +65,12 @@ public class PoliceCar : MonoBehaviour
             GetComponent<RCC_AICarController>().SetTarget("");
             if (Game_controller.instance.policeDetectBar.fillAmount <= 0.2f)
             {
+                detectionEffect.Stop();
                 detectionRange = 50;
+                policeDecetionArea.GetComponent<SpriteRenderer>().color = Color.blue;
                 Vector3 scale = new Vector3(4.7f, 4.7f, 4.7f);
                 policeDecetionArea.transform.localScale = scale;
+                policeLights.SetActive(false);
             }
 
         }
