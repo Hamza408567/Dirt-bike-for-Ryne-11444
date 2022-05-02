@@ -7,6 +7,7 @@ public class PoliceController : MonoBehaviour
     public bool playerInRange;
     public GameObject[] police_car;     
     public static PoliceController instance;
+    public float catchspeed,detectspeed;
     public bool wheelerDetected;
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class PoliceController : MonoBehaviour
     {
         if(playerInRange)
         {
-            Game_controller.instance.healthBar.fillAmount = Mathf.Lerp(Game_controller.instance.healthBar.fillAmount, 1.1f, 0.01f);
+            Game_controller.instance.healthBar.fillAmount = Mathf.Lerp(Game_controller.instance.healthBar.fillAmount, 1.1f, Time.deltaTime * catchspeed);
             if (Game_controller.instance.healthBar.fillAmount >= 1)
             {
                PlayerCatch();
@@ -31,17 +32,17 @@ public class PoliceController : MonoBehaviour
         }
         else
         {
-            Game_controller.instance.healthBar.fillAmount = Mathf.Lerp(Game_controller.instance.healthBar.fillAmount, 0, 0.03f);
+            Game_controller.instance.healthBar.fillAmount = Mathf.Lerp(Game_controller.instance.healthBar.fillAmount, 0, Time.deltaTime * catchspeed);
         }
         
     }
     public void DetectionBarPositive()
     {
-        Game_controller.instance.policeDetectBar.fillAmount = Mathf.Lerp(Game_controller.instance.policeDetectBar.fillAmount, 1.1f, 0.01f);
+        Game_controller.instance.policeDetectBar.fillAmount = Mathf.Lerp(Game_controller.instance.policeDetectBar.fillAmount, 1.1f, Time.deltaTime * detectspeed);
     }  
     public void DetectionBarNegative()
     {
-        Game_controller.instance.policeDetectBar.fillAmount = Mathf.Lerp(Game_controller.instance.policeDetectBar.fillAmount, 0f, 0.01f);
+        Game_controller.instance.policeDetectBar.fillAmount = Mathf.Lerp(Game_controller.instance.policeDetectBar.fillAmount, 0f, Time.deltaTime * detectspeed);
     }
     public void PlayerCatch()
     {

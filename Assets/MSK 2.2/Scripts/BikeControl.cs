@@ -811,7 +811,7 @@ public class BikeControl : MonoBehaviour
                 if (powerShift <= 1&& accell==true)
             {
                 accelFwd = 0;
-                Debug.LogError("nitro run Dccelaration");
+               // Debug.LogError("nitro run Dccelaration");
                 accell = false;
             }
 

@@ -84,7 +84,7 @@ public class RCC_AICarController : MonoBehaviour {
 
 			_AIType = AIType.ChasePlayer;
 			target = Game_controller.instance.player.transform;
-			Debug.LogError("wheelers detect");
+			//Debug.LogError("wheelers detect");
 		}
 		else
 		{
@@ -352,7 +352,7 @@ public class RCC_AICarController : MonoBehaviour {
 		else
 		{
 			carController.gasInput = 0f;
-			Debug.LogError("back ");
+			//Debug.LogError("back ");
 		}
 
 		if(smoothedSteer)

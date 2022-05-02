@@ -58,11 +58,14 @@ public class PoliceCar : MonoBehaviour
         if(Vector3.Distance(target.transform.position, transform.position) >= detectionRange)
         {
             PoliceController.instance.DetectionBarNegative();
-            detectionRange = 50;
-            Vector3 scale = new Vector3(4.7f, 4.7f, 4.7f);
             PoliceController.instance.wheelerDetected = false;
-            policeDecetionArea.transform.localScale = scale;
             GetComponent<RCC_AICarController>().SetTarget("");
+            if (Game_controller.instance.policeDetectBar.fillAmount <= 0.2f)
+            {
+                detectionRange = 50;
+                Vector3 scale = new Vector3(4.7f, 4.7f, 4.7f);
+                policeDecetionArea.transform.localScale = scale;
+            }
 
         }
     }
