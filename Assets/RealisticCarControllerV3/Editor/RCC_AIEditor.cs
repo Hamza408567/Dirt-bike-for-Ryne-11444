@@ -87,12 +87,6 @@ public class RCC_AIEditor : Editor {
 		if(!aiController.gameObject.GetComponent<RCC_CarControllerV3>().AIController)
 			aiController.gameObject.GetComponent<RCC_CarControllerV3>().AIController = true;
 
-//		if(aiController.gameObject.GetComponent<RCC_CarControllerV3>().canEngineStall)
-//			aiController.gameObject.GetComponent<RCC_CarControllerV3>().canEngineStall = false;
-//
-//		if(!aiController.gameObject.GetComponent<RCC_CarControllerV3>().autoReverse)
-//			aiController.gameObject.GetComponent<RCC_CarControllerV3>().autoReverse = true;
-
 		EditorGUILayout.Separator();
 		EditorGUILayout.BeginHorizontal();
 		GUILayout.Box(AIIcon, GUILayout.ExpandWidth(true));
@@ -100,7 +94,6 @@ public class RCC_AIEditor : Editor {
 		EditorGUILayout.Separator();
 
 		EditorGUILayout.LabelField("Target", aiController.target.ToString());
-		//EditorGUILayout.PropertyField(serializedObject.FindProperty("target"), new GUIContent("Target", "get active player ."), true);
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("waypointsContainer"), new GUIContent("waypointsContainer", "waypoint."), true);
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("_AIType"), new GUIContent("AI Type", "AI Type."), false);
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("obstacleLayers"), new GUIContent("Obstacle Layers", "Obstacle Layers For Avoid Dynamic Objects."), false);

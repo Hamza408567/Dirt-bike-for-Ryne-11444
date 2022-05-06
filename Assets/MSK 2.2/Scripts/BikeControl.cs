@@ -844,6 +844,7 @@ public class BikeControl : MonoBehaviour
                 {
                     shifmotor = true;
                 }
+                if(Game_controller.instance)
                 Game_controller.instance.wheels = false;
                 bikeSounds.nitro.volume = Mathf.MoveTowards(bikeSounds.nitro.volume, 0.0f, Time.deltaTime * 2.0f);
 

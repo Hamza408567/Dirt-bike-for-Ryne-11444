@@ -213,7 +213,7 @@ public class RCC_AICarController : MonoBehaviour {
 		if (carController.speed <= 5 && transform.InverseTransformDirection(rigid.velocity).z < 1f)
 		{
 			resetTime += Time.deltaTime;
-			Debug.LogError("resitting");
+			//Debug.LogError("resitting");
 		}
 
 		if (resetTime >= 2)
@@ -221,7 +221,7 @@ public class RCC_AICarController : MonoBehaviour {
 			carController.direction = -1;
 		}
 
-		if(resetTime >= 5 || carController.speed >= 13){
+		if(resetTime >= 5 || carController.speed >= 11){
 			carController.direction = 1;
 			resetTime = 0;
 		}
@@ -348,6 +348,7 @@ public class RCC_AICarController : MonoBehaviour {
 			else
 			{
 				carController.gasInput = gasInput * Mathf.Clamp01(Mathf.Lerp(10f, 0f, (carController.speed) / maximumSpeed));
+				//Debug.LogError("hhjhj ");
 			}
 		}
 		else
