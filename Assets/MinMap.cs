@@ -17,6 +17,6 @@ public class MinMap : MonoBehaviour
         Vector3 newposition = player.position;
         newposition.y = transform.position.y;
         transform.position = newposition;
-        transform.rotation = Quaternion.Euler(90f, Camera.main.transform.eulerAngles.y, 0f);
+        transform.rotation = Quaternion.Euler(90f, Camera.main.transform.rotation.y, 0f);
     }
 }

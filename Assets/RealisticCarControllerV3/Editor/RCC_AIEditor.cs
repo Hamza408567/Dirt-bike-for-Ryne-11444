@@ -99,12 +99,14 @@ public class RCC_AIEditor : Editor {
 		EditorGUILayout.EndHorizontal();
 		EditorGUILayout.Separator();
 
+		EditorGUILayout.PropertyField(serializedObject.FindProperty("target"), new GUIContent("Target", "get active player ."), true);
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("_AIType"), new GUIContent("AI Type", "AI Type."), false);
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("obstacleLayers"), new GUIContent("Obstacle Layers", "Obstacle Layers For Avoid Dynamic Objects."), false);
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("wideRayLength"), new GUIContent("Wide Ray Distance", "Wide Rays For Avoid Dynamic Objects."), false);
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("tightRayLength"), new GUIContent("Tight Ray Distance", "Tight Rays For Avoid Dynamic Objects."), false);
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("sideRayLength"), new GUIContent("Side Ray Distance", "Side Rays For Avoid Dynamic Objects."), false);
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("limitSpeed"), new GUIContent("Limit Speed", "Limits The Speed."), false);
+		
 
 		if(aiController.limitSpeed)
 			EditorGUILayout.Slider(serializedObject.FindProperty("maximumSpeed"), 0f, aiController.GetComponent<RCC_CarControllerV3>().maxspeed);

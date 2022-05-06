@@ -8,7 +8,7 @@ public class PoliceCar : MonoBehaviour
     public GameObject policeLights;
     public GameObject policeDecetionArea;
     public ParticleSystem detectionEffect;
-    public int detectionRange;
+    
     public int catchDistance=10;
    
     
@@ -36,37 +36,42 @@ public class PoliceCar : MonoBehaviour
     
     public void detectWheelers()
     {
-        if (Vector3.Distance(target.transform.position, transform.position) < detectionRange && Game_controller.instance.wheels)
+        if (Vector3.Distance(target.transform.position, transform.position) < PoliceController.instance.policedetectionRang)
         {
-            PoliceController.instance.DetectionBarPositive();
+            PoliceController.instance.detectionRange = true;
+            if (Game_controller.instance.wheels)
+            {
+                PoliceController.instance.DetectionBarPositive();
+            }
             if (Game_controller.instance.policeDetectBar.fillAmount >= 1)
             {
                 detectionEffect.Play();
-                detectionRange = 100;
+                PoliceController.instance.policedetectionRang = 100;
                 policeDecetionArea.GetComponent<SpriteRenderer>().color = Color.red;
-                Vector3 scale =new Vector3 (9.4f, 9.4f, 9.4f);
+                Vector3 scale = new Vector3(9.4f, 9.4f, 9.4f);
                 policeDecetionArea.transform.localScale = scale;
                 policeLights.SetActive(true);
                 PoliceController.instance.wheelerDetected = true;
-                GetComponent<RCC_AICarController>().SetTarget("catchPlayer");
+               // GetComponent<RCC_AICarController>().SetTarget("catchPlayer");
             }
-        }
-        else
-        {
-            GetComponent<RCC_AICarController>().SetTarget("");
+            else
+            {
+               // GetComponent<RCC_AICarController>().SetTarget("");
+            }
         }
     }
     public void PlayerEscape()
     {
-        if(Vector3.Distance(target.transform.position, transform.position) >= detectionRange)
+        if(Vector3.Distance(target.transform.position, transform.position) >= PoliceController.instance.policedetectionRang)
         {
             PoliceController.instance.DetectionBarNegative();
-            PoliceController.instance.wheelerDetected = false;
-            GetComponent<RCC_AICarController>().SetTarget("");
-            if (Game_controller.instance.policeDetectBar.fillAmount <= 0.2f)
+            PoliceController.instance.detectionRange = false;
+            //GetComponent<RCC_AICarController>().SetTarget("");
+            if (Game_controller.instance.policeDetectBar.fillAmount <= 0.01f)
             {
                 detectionEffect.Stop();
-                detectionRange = 50;
+                PoliceController.instance.policedetectionRang = 50;
+                PoliceController.instance.wheelerDetected = false;
                 policeDecetionArea.GetComponent<SpriteRenderer>().color = Color.blue;
                 Vector3 scale = new Vector3(4.7f, 4.7f, 4.7f);
                 policeDecetionArea.transform.localScale = scale;
