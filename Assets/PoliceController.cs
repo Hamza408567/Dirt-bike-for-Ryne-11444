@@ -9,9 +9,9 @@ public class PoliceController : MonoBehaviour
     public int policedetectionRang;
     public float catchspeed, detectspeed;
     public bool wheelerDetected, detectionRange;
-    public bool playerCatchRange;
+    public bool playerCatchRange,playerChatched;
     public int countOutRangeCar,countOutRangeCatchCar;
-
+    public GameObject policeSound;
     public float fireRate;
     public float nextFire;
     private void Awake()
@@ -21,7 +21,6 @@ public class PoliceController : MonoBehaviour
 
     void Start()
     {
-        checkPlayerNotInRange();
     }
 
 
@@ -34,6 +33,20 @@ public class PoliceController : MonoBehaviour
         }
         DetectiveBar();
         catchBar();
+        if(wheelerDetected)
+        {
+            policeSound.SetActive(true);
+
+        }
+        else
+        {
+            policeSound.SetActive(false);
+        }
+        if(playerChatched)
+        {
+            policeSound.SetActive(false);
+        }
+    
     }
     public void catchBar()
     {
@@ -42,6 +55,7 @@ public class PoliceController : MonoBehaviour
             Game_controller.instance.healthBar.fillAmount = Mathf.Lerp(Game_controller.instance.healthBar.fillAmount, 1.1f, Time.deltaTime * catchspeed);
             if (Game_controller.instance.healthBar.fillAmount >= 1)
             {
+                playerChatched = true;
                 PlayerCatch();
             }
         }
@@ -63,10 +77,21 @@ public class PoliceController : MonoBehaviour
         }
     public void PlayerCatch()
     {
-        Time.timeScale = 0;
-        Game_controller.instance.playerCatchPanel.SetActive(true);
+        if (playerChatched)
+        {
+            Time.timeScale = 0;
+            playerCatchRange = false;
+            Debug.LogError("recursion");
+            Game_controller.instance.playerCatchPanel.SetActive(true);
+        }
     }
-
+    public void DeactiveAllPolice()
+    {
+        for (int i = 0; i < police_car.Length; i++)
+        {
+            police_car[i].SetActive(false);
+        }
+    }
     public void checkPlayerNotInRange()
     {
 
@@ -100,7 +125,7 @@ public class PoliceController : MonoBehaviour
         {
             playerCatchRange = true;
         }
-        Debug.LogError("recursion");
+
     }
 
 }

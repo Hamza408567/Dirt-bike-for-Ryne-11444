@@ -12,7 +12,7 @@ public class Game_controller : MonoBehaviour
     public GameObject pauseManue;
     public GameObject completeManue;
     public GameObject settingManue;
-    public GameObject failManue,playerCatchPanel;
+    public GameObject failManue,playerCatchPanel,bikeSelection;
     public Button soundButton;
     public GameObject[] AllBike;
     public GameObject player;
@@ -117,6 +117,14 @@ public class Game_controller : MonoBehaviour
             directionalLight.transform.rotation = Quaternion.Euler(60, 244, 0);
             RenderSettings.skybox = skyBox4;
         }
+    }
+    public void OpenBikeSelection()
+    {
+        bikeSelection.SetActive(true);
+        gamePlayManue.SetActive(false);
+        playerCatchPanel.SetActive(false);
+        PoliceController.instance.DeactiveAllPolice();
+        player.SetActive(false);
     }
     public void Main_Manue(string s)
     {
